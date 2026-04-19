@@ -581,7 +581,7 @@ p { line-height: 1.78; }
 /* ── Hero Interactive Terminal ── */
 .term-code-pane {
   border-bottom: 1px solid rgba(255,255,255,0.05);
-  max-height: 185px;
+  max-height: 240px;
 }
 
 .term-divider {
@@ -609,8 +609,8 @@ p { line-height: 1.78; }
 
 .term-console {
   padding: 12px 16px 16px;
-  min-height: 240px;
-  max-height: 400px;
+  min-height: 160px;
+  max-height: 220px;
   overflow-y: auto;
   background: #070f19;
   font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
@@ -1633,7 +1633,7 @@ p { line-height: 1.78; }
   align-items: center;
   justify-content: space-between;
   padding: 14px 16px;
-  background: var(--primary);
+  background: var(--accent);
   flex-shrink: 0;
 }
 .cw-header-info { display: flex; align-items: center; gap: 10px; }
@@ -1641,8 +1641,8 @@ p { line-height: 1.78; }
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--accent);
-  color: var(--white);
+  background: var(--white);
+  color: var(--accent);
   font-family: var(--font-display);
   font-size: 0.85rem;
   font-weight: 700;

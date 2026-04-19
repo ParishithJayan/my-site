@@ -70,8 +70,8 @@
           </div>
           <!-- Code pane -->
           <div class="editor-body term-code-pane">
-            <div class="line-nums" aria-hidden="true">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</div>
-            <pre class="editor-code"><code><span class="cs-kw">using</span> <span class="cs-ns">System</span>;
+            <div class="line-nums" id="termLineNums" aria-hidden="true">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</div>
+            <pre class="editor-code"><code id="termCodeBlock"><span class="cs-kw">using</span> <span class="cs-ns">System</span>;
 
 <span class="cs-cmt">// CfCE — run to begin</span>
 <span class="cs-kw">static void</span> <span class="cs-fn">Main</span>()
@@ -1099,18 +1099,27 @@
         '<span class="term-gt">&gt;&nbsp;</span>' +
         '<span style="color:var(--white)">' + escHtml(name) + '</span>';
 
-      var codeHtml =
-        '<span class="cs-fn">Console</span>.<span class="cs-fn">WriteLine</span>(' +
-        '<span class="cs-str">$"Very happy to have you looking into ' +
-        'Coding for Civil Engineers, <span class="cs-interp">{name}</span>!"</span>);';
+      var updatedCode =
+        '<span class="cs-kw">using</span> <span class="cs-ns">System</span>;\n\n' +
+        '<span class="cs-cmt">// CfCE — run to begin</span>\n' +
+        '<span class="cs-kw">static void</span> <span class="cs-fn">Main</span>()\n' +
+        '{\n' +
+        '    <span class="cs-fn">Console</span>.<span class="cs-fn">Write</span>(<span class="cs-str">"' + escHtml(document.getElementById('termPromptStr').textContent.replace(/^"|"$/g,'')) + '"</span>);\n' +
+        '    <span class="cs-kw">string</span> name = <span class="cs-str">"' + escHtml(name) + '"</span>;\n' +
+        '    <span class="cs-fn">Console</span>.<span class="cs-fn">WriteLine</span>(\n' +
+        '        <span class="cs-str">$"Very happy to have you looking into CfCE, <span class="cs-interp">{name}</span>!"</span>);\n' +
+        '}';
 
       var resultHtml =
         '&#x25B6;&nbsp;&nbsp;Very happy to have you looking into ' +
         'Coding for Civil Engineers, ' + escHtml(name) + '!';
 
+      setTimeout(function () {
+        document.getElementById('termCodeBlock').innerHTML = updatedCode;
+        document.getElementById('termLineNums').innerHTML = '1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11';
+      }, 480);
+
       addLine('', '', 280);
-      addLine(codeHtml, 'term-out-code', 580);
-      addLine('', '', 1020);
       addLine(resultHtml, 'term-out-result', 1150);
 
       setTimeout(function () {
