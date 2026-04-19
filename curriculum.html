@@ -32,7 +32,7 @@
 
     .curr-hero {
       background: var(--primary);
-      padding: 80px 0 72px;
+      padding: 90px 0 72px;
       position: relative;
       overflow: hidden;
     }
@@ -258,7 +258,7 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      .curr-hero { padding: 56px 0 52px; }
+      .curr-hero { padding: 90px 0 52px; }
       .curr-stats-inner { flex-wrap: wrap; gap: 24px; }
       .curr-stat { border-left: none !important; }
       .sessions-grid { grid-template-columns: 1fr; }
@@ -267,6 +267,16 @@
   </style>
 </head>
 <body>
+
+  <!-- ═══ ANNOUNCEMENT BAR ═══ -->
+  <div class="announce-bar">
+    <a href="/enroll">
+      <span class="announce-pulse"></span>
+      <span class="announce-text">Next cohort begins April 25, 2026 · Limited seats</span>
+      <span class="announce-text-short">Next cohort · Apr 25, 2026</span>
+      <span class="announce-cta">Reserve your spot →</span>
+    </a>
+  </div>
 
   <!-- ═══ NAV ═══ -->
   <nav class="nav" id="nav">
