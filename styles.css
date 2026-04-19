@@ -271,23 +271,16 @@ p { line-height: 1.78; }
 
 .logo {
   display: flex;
-  flex-direction: column;
-  gap: 1px;
+  align-items: center;
   justify-self: start;
 }
-.logo-mark {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: -0.03em;
-  line-height: 1;
+.logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
 }
-.logo-name {
-  font-size: 0.62rem;
-  color: rgba(255,255,255,0.4);
-  letter-spacing: 0.03em;
-  line-height: 1;
+.logo-img-footer {
+  height: 34px;
 }
 
 .nav-links {
