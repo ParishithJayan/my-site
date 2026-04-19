@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum — OpenSTAAD Bootcamp for Everyone | CfCE</title>
+  <meta name="description" content="5 weeks. 10 sessions. 4 real automation tools built from scratch. See exactly what you will learn and build in the OpenSTAAD Bootcamp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── Curriculum-page specific styles ── */
+
+    .curr-hero {
+      background: var(--primary);
+      padding: 80px 0 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .curr-hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(29,158,117,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(29,158,117,0.06) 1px, transparent 1px);
+      background-size: 52px 52px;
+    }
+    .curr-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+    }
+    .curr-hero h1 {
+      color: var(--white);
+      margin-bottom: 16px;
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+    }
+    .curr-hero h1 em { color: var(--accent); }
+    .curr-hero p {
+      color: rgba(255,255,255,0.68);
+      font-size: 1.05rem;
+      max-width: 560px;
+    }
+
+    /* Stats strip */
+    .curr-stats {
+      background: var(--white);
+      border-bottom: 1px solid rgba(30,45,64,0.07);
+      padding: 26px 0;
+    }
+    .curr-stats-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+    }
+    .curr-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 0 44px;
+      text-align: center;
+    }
+    .curr-stat + .curr-stat { border-left: 1px solid rgba(30,45,64,0.1); }
+    .curr-stat-big {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .curr-stat-big.teal { color: var(--accent); }
+    .curr-stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* Main curriculum body */
+    .curriculum-body {
+      background: var(--surface);
+      padding: 72px 0 96px;
+    }
+
+    /* Week block */
+    .week-block {
+      margin-bottom: 56px;
+    }
+    .week-block:last-child { margin-bottom: 0; }
+
+    .week-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid rgba(30,45,64,0.08);
+    }
+    .week-num {
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--light-bg);
+      border: 1px solid rgba(29,158,117,0.22);
+      padding: 5px 12px;
+      border-radius: var(--r-pill);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .week-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary);
+      letter-spacing: -0.01em;
+    }
+
+    /* Session cards grid */
+    .sessions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .session-card {
+      background: var(--white);
+      border-radius: var(--r);
+      padding: 26px 28px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-left: 3px solid transparent;
+      transition: transform var(--t) var(--ease), box-shadow var(--t) var(--ease);
+    }
+    .session-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+    .session-card.has-build {
+      border-left-color: var(--accent);
+    }
+
+    .session-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .session-num {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .build-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: var(--pop);
+      color: #6b3e00;
+      padding: 3px 10px;
+      border-radius: var(--r-pill);
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .session-title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+    .session-desc {
+      font-size: 0.88rem;
+      color: var(--text-body);
+      line-height: 1.68;
+      flex: 1;
+    }
+
+    /* Build project strip */
+    .build-strip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--light-bg);
+      border-radius: var(--r-sm);
+      padding: 9px 12px;
+      margin-top: 4px;
+    }
+    .build-strip-icon {
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+    .build-strip-text {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .build-strip-text span {
+      font-weight: 400;
+      color: var(--text-body);
+    }
+
+    /* Bottom CTA */
+    .curr-cta {
+      background: var(--primary);
+      padding: 72px 0;
+      text-align: center;
+    }
+    .curr-cta h2 {
+      color: var(--white);
+      margin-bottom: 16px;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+    }
+    .curr-cta h2 em { color: var(--accent); }
+    .curr-cta p {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+    .curr-cta-btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .curr-hero { padding: 56px 0 52px; }
+      .curr-stats-inner { flex-wrap: wrap; gap: 24px; }
+      .curr-stat { border-left: none !important; }
+      .sessions-grid { grid-template-columns: 1fr; }
+      .curriculum-body { padding: 48px 0 64px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">CfCE</span>
+        <span class="logo-name">Coding for Civil Engineers</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#course">Course</a></li>
+        <li><a href="curriculum.html" style="color:#fff;">Curriculum</a></li>
+        <li><a href="index.html#testimonials">Testimonials</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#course" class="btn-nav">Join Bootcamp</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#about" class="mob-link">About</a></li>
+      <li><a href="index.html#course" class="mob-link">Course</a></li>
+      <li><a href="curriculum.html" class="mob-link">Curriculum</a></li>
+      <li><a href="index.html#testimonials" class="mob-link">Testimonials</a></li>
+      <li><a href="index.html#contact" class="mob-link">Contact</a></li>
+      <li><a href="index.html#course" class="btn-primary mob-link">Join Bootcamp — ₹12,000</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══ PAGE HERO ═══ -->
+  <section class="curr-hero">
+    <div class="curr-hero-grid"></div>
+    <div class="container curr-hero-inner">
+      <span class="eyebrow light">OpenSTAAD Bootcamp for Everyone</span>
+      <h1>What You Will <em>Build</em><br>in 5 Weeks</h1>
+      <p>This is not a theory course. Every week ends with working code. By Session 10, you will have four real automation tools — built by you, owned by you.</p>
+    </div>
+  </section>
+
+  <!-- ═══ STATS ═══ -->
+  <div class="curr-stats">
+    <div class="container curr-stats-inner">
+      <div class="curr-stat">
+        <span class="curr-stat-big">5</span>
+        <span class="curr-stat-label">Weeks</span>
+      </div>
+      <div class="curr-stat">
+        <span class="curr-stat-big">10</span>
+        <span class="curr-stat-label">Sessions</span>
+      </div>
+      <div class="curr-stat">
+        <span class="curr-stat-big teal">4</span>
+        <span class="curr-stat-label">Tools Built</span>
+      </div>
+      <div class="curr-stat">
+        <span class="curr-stat-big">₹12,000</span>
+        <span class="curr-stat-label">Complete Bootcamp</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ CURRICULUM ═══ -->
+  <section class="curriculum-body">
+    <div class="container">
+
+      <!-- WEEK 1 -->
+      <div class="week-block reveal">
+        <div class="week-header">
+          <span class="week-num">Week 1</span>
+          <span class="week-title">Programming Foundations</span>
+        </div>
+        <div class="sessions-grid">
+
+          <div class="session-card">
+            <div class="session-meta">
+              <span class="session-num">Session 01</span>
+            </div>
+            <h3 class="session-title">Setup + Visual Studio</h3>
+            <p class="session-desc">Install Visual Studio and configure your development environment. Learn the essential setup steps to start writing C# code immediately.</p>
+          </div>
+
+          <div class="session-card">
+            <div class="session-meta">
+              <span class="session-num">Session 02</span>
+            </div>
+            <h3 class="session-title">Variables, Loops &amp; Conditions</h3>
+            <p class="session-desc">Master variables to store data, loops to repeat actions, and conditions to make decisions. Write your first complete programs using these core building blocks.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- WEEK 2 -->
+      <div class="week-block reveal">
+        <div class="week-header">
+          <span class="week-num">Week 2</span>
+          <span class="week-title">From Programming to Automation</span>
+        </div>
+        <div class="sessions-grid">
+
+          <div class="session-card">
+            <div class="session-meta">
+              <span class="session-num">Session 03</span>
+            </div>
+            <h3 class="session-title">OOP Concepts</h3>
+            <p class="session-desc">Master classes and objects — the building blocks of professional C# development and automation tools.</p>
+          </div>
+
+          <div class="session-card has-build">
+            <div class="session-meta">
+              <span class="session-num">Session 04</span>
+              <span class="build-badge">You Will Build</span>
+            </div>
+            <h3 class="session-title">File Handling + Mini Project</h3>
+            <p class="session-desc">Learn to read, write, and manipulate files in C# — essential for STAAD input file automation.</p>
+            <div class="build-strip">
+              <svg class="build-strip-icon" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                <path d="M7.5 1v13M1 7.5h13" stroke="#1D9E75" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <p class="build-strip-text">2D PEB Frame Generator <span>— creates STAAD models from code</span></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- WEEK 3 -->
+      <div class="week-block reveal">
+        <div class="week-header">
+          <span class="week-num">Week 3</span>
+          <span class="week-title">OpenSTAAD</span>
+        </div>
+        <div class="sessions-grid">
+
+          <div class="session-card">
+            <div class="session-meta">
+              <span class="session-num">Session 05</span>
+            </div>
+            <h3 class="session-title">Introduction to OpenSTAAD</h3>
+            <p class="session-desc">Get started with OpenSTAAD fundamentals. Learn how the API connects to STAAD.Pro and enables programmatic control over your models.</p>
+          </div>
+
+          <div class="session-card has-build">
+            <div class="session-meta">
+              <span class="session-num">Session 06</span>
+              <span class="build-badge">You Will Build</span>
+            </div>
+            <h3 class="session-title">API Workflow + Mini Project</h3>
+            <p class="session-desc">Master the OpenSTAAD API workflow from initialisation to execution. Understand geometry automation and how to create models through code.</p>
+            <div class="build-strip">
+              <svg class="build-strip-icon" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                <path d="M7.5 1v13M1 7.5h13" stroke="#1D9E75" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <p class="build-strip-text">MTO Generation Tool <span>— extracts material take-off directly from STAAD</span></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- WEEK 4 -->
+      <div class="week-block reveal">
+        <div class="week-header">
+          <span class="week-num">Week 4</span>
+          <span class="week-title">Real Automation</span>
+        </div>
+        <div class="sessions-grid">
+
+          <div class="session-card">
+            <div class="session-meta">
+              <span class="session-num">Session 07</span>
+            </div>
+            <h3 class="session-title">Supports &amp; Loads</h3>
+            <p class="session-desc">Learn to automate support assignments and load applications in STAAD models programmatically using C# and OpenSTAAD.</p>
+          </div>
+
+          <div class="session-card has-build">
+            <div class="session-meta">
+              <span class="session-num">Session 08</span>
+              <span class="build-badge">You Will Build</span>
+            </div>
+            <h3 class="session-title">Extracting Results + Mini Project</h3>
+            <p class="session-desc">Master techniques for extracting analysis results, reactions, and member forces directly from STAAD using the OpenSTAAD API.</p>
+            <div class="build-strip">
+              <svg class="build-strip-icon" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                <path d="M7.5 1v13M1 7.5h13" stroke="#1D9E75" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <p class="build-strip-text">Load Export Tool <span>— extracts loads and reactions to Excel automatically</span></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- WEEK 5 -->
+      <div class="week-block reveal">
+        <div class="week-header">
+          <span class="week-num">Week 5</span>
+          <span class="week-title">Build a Complete Tool</span>
+        </div>
+        <div class="sessions-grid">
+
+          <div class="session-card">
+            <div class="session-meta">
+              <span class="session-num">Session 09</span>
+            </div>
+            <h3 class="session-title">Problem Definition + UI Building</h3>
+            <p class="session-desc">Define a real-world engineering problem to solve. Identify requirements, inputs, and outputs. Learn to create user-friendly interfaces — forms, buttons, and input controls — that make your automation accessible.</p>
+          </div>
+
+          <div class="session-card has-build">
+            <div class="session-meta">
+              <span class="session-num">Session 10</span>
+              <span class="build-badge">You Will Build</span>
+            </div>
+            <h3 class="session-title">Complete Tool Delivery</h3>
+            <p class="session-desc">Bring everything together into a polished, production-ready automation tool. Integrate all components and deliver a finished project — something you built, own, and can use on real work immediately.</p>
+            <div class="build-strip">
+              <svg class="build-strip-icon" width="15" height="15" viewBox="0 0 15 15" fill="none">
+                <path d="M7.5 1v13M1 7.5h13" stroke="#1D9E75" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+              <p class="build-strip-text">Your Complete Automation Tool <span>— production-ready, yours to keep</span></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ BOTTOM CTA ═══ -->
+  <section class="curr-cta">
+    <div class="container">
+      <h2>Ready to Stop Doing It<br><em>Manually?</em></h2>
+      <p>Five weeks. Ten sessions. Four tools built by you. This is the clearest path from STAAD user to STAAD automator.</p>
+      <div class="curr-cta-btns">
+        <a href="index.html#contact" class="btn-primary">Reserve Your Seat — ₹12,000</a>
+        <a href="index.html" class="btn-ghost">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">CfCE</span>
+        <span class="footer-tag">Automate STAAD. Reclaim your time.</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#course">Course</a>
+        <a href="curriculum.html">Curriculum</a>
+        <a href="index.html#testimonials">Testimonials</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2025 Coding for Civil Engineers · codingforcivilengineers.com</p>
+    </div>
+  </footer>
+
+  <!-- ═══ CHAT WIDGET ═══ -->
+  <div class="cw" id="cw">
+    <div class="cw-panel" id="cwPanel" aria-hidden="true">
+      <div class="cw-header">
+        <div class="cw-header-info">
+          <div class="cw-avatar">P</div>
+          <div class="cw-header-text">
+            <span class="cw-name">Parishith</span>
+            <span class="cw-status">AI Assistant · CfCE</span>
+          </div>
+        </div>
+        <button class="cw-close" id="cwClose" aria-label="Close chat">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="cw-messages" id="cwMessages">
+        <div class="cw-msg cw-bot">
+          <p>Got questions about the curriculum or what you will build? Ask away.</p>
+        </div>
+        <div class="cw-typing" id="cwTyping">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="cw-input-row">
+        <input type="text" id="cwInput" class="cw-input" placeholder="Ask me anything…" autocomplete="off" maxlength="500"/>
+        <button class="cw-send" id="cwSend" aria-label="Send message">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M1.5 8h13M8 1.5L14.5 8 8 14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <button class="cw-bubble" id="cwBubble" aria-label="Open chat assistant">
+      <svg class="cw-bubble-icon cw-icon-chat" width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <path d="M11 2C6.03 2 2 5.58 2 10c0 1.9.72 3.65 1.92 5.06L3 20l5.32-1.52A9.34 9.34 0 0011 18c4.97 0 9-3.58 9-8s-4.03-8-9-8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      </svg>
+      <svg class="cw-bubble-icon cw-icon-close" width="18" height="18" viewBox="0 0 18 18" fill="none" style="display:none">
+        <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="cw-bubble-label">Ask me anything</span>
+    </button>
+  </div>
+
+  <script>
+    // Nav scroll + hamburger
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function() {
+      nav.classList.toggle('scrolled', window.scrollY > 24);
+    }, { passive: true });
+
+    var hamburger = document.getElementById('hamburger');
+    var mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', function() {
+      var open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+    document.querySelectorAll('.mob-link').forEach(function(l) {
+      l.addEventListener('click', function() {
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+      });
+    });
+
+    // Scroll reveal
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+
+    // Chat widget
+    (function() {
+      var bubble   = document.getElementById('cwBubble');
+      var panel    = document.getElementById('cwPanel');
+      var closeBtn = document.getElementById('cwClose');
+      var input    = document.getElementById('cwInput');
+      var sendBtn  = document.getElementById('cwSend');
+      var messages = document.getElementById('cwMessages');
+      var typing   = document.getElementById('cwTyping');
+      var iconChat = bubble.querySelector('.cw-icon-chat');
+      var iconX    = bubble.querySelector('.cw-icon-close');
+
+      var history = [];
+      var open = false;
+      var busy = false;
+
+      function togglePanel() {
+        open = !open;
+        panel.classList.toggle('cw-open', open);
+        panel.setAttribute('aria-hidden', String(!open));
+        bubble.classList.toggle('cw-active', open);
+        iconChat.style.display = open ? 'none' : '';
+        iconX.style.display    = open ? ''     : 'none';
+        if (open) { scrollBottom(); input.focus(); }
+      }
+      function scrollBottom() { messages.scrollTop = messages.scrollHeight; }
+      function addMessage(role, text) {
+        var div = document.createElement('div');
+        div.className = 'cw-msg ' + (role === 'user' ? 'cw-user' : 'cw-bot');
+        var p = document.createElement('p');
+        p.textContent = text;
+        div.appendChild(p);
+        messages.insertBefore(div, typing);
+        scrollBottom();
+      }
+      function setDisabled(state) {
+        busy = state; input.disabled = state; sendBtn.disabled = state;
+      }
+      async function send() {
+        var text = input.value.trim();
+        if (!text || busy) return;
+        history.push({ role: 'user', content: text });
+        addMessage('user', text);
+        input.value = '';
+        setDisabled(true);
+        typing.style.display = 'flex';
+        scrollBottom();
+        try {
+          var res  = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ messages: history })
+          });
+          var data = await res.json();
+          typing.style.display = 'none';
+          if (data.error || !data.reply) {
+            addMessage('bot', data.error || 'Something went wrong. Please try again.');
+          } else {
+            history.push({ role: 'assistant', content: data.reply });
+            addMessage('bot', data.reply);
+          }
+        } catch (e) {
+          typing.style.display = 'none';
+          addMessage('bot', 'Something went wrong. Please try again or use the contact form.');
+        } finally {
+          setDisabled(false);
+          input.focus();
+        }
+      }
+      bubble.addEventListener('click', togglePanel);
+      closeBtn.addEventListener('click', togglePanel);
+      sendBtn.addEventListener('click', send);
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); send(); }
+      });
+    })();
+  </script>
+</body>
+</html>

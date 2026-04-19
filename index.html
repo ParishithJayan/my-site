@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coding for Civil Engineers — Automate STAAD. Reclaim Your Time.</title>
+  <meta name="description" content="Learn OpenSTAAD automation from a practising structural engineer. No coding background needed. OpenSTAAD Bootcamp for Everyone — ₹12,000.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-mark">CfCE</span>
+        <span class="logo-name">Coding for Civil Engineers</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#course">Course</a></li>
+        <li><a href="curriculum.html">Curriculum</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#course" class="btn-nav">Join Bootcamp</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#course" class="mob-link">Course</a></li>
+      <li><a href="curriculum.html" class="mob-link">Curriculum</a></li>
+      <li><a href="#testimonials" class="mob-link">Testimonials</a></li>
+      <li><a href="#faq" class="mob-link">FAQ</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+      <li><a href="#course" class="btn-primary mob-link">Join Bootcamp — ₹12,000</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="home">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <div class="container hero-inner">
+
+      <!-- LEFT: Interactive terminal -->
+      <div class="hero-visual reveal-hero">
+        <div class="editor-card">
+          <!-- Title bar -->
+          <div class="editor-titlebar">
+            <div class="editor-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="editor-tabs">
+              <span class="etab active">WelcomeVisitor.cs</span>
+              <span class="etab">Terminal</span>
+            </div>
+          </div>
+          <!-- Code pane -->
+          <div class="editor-body term-code-pane">
+            <div class="line-nums" aria-hidden="true">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</div>
+            <pre class="editor-code"><code><span class="cs-kw">using</span> <span class="cs-ns">System</span>;
+
+<span class="cs-cmt">// CfCE — run to begin</span>
+<span class="cs-kw">static void</span> <span class="cs-fn">Main</span>()
+{
+    <span class="cs-fn">Console</span>.<span class="cs-fn">Write</span>(<span class="cs-str" id="termPromptStr">"..."</span>);
+    <span class="cs-kw">string</span> name =
+        <span class="cs-fn">Console</span>.<span class="cs-fn">ReadLine</span>();<span class="cs-cursor"></span>
+}</code></pre>
+          </div>
+          <!-- Terminal divider -->
+          <div class="term-divider"><span>TERMINAL</span></div>
+          <!-- Interactive console -->
+          <div class="term-console" id="termConsole">
+            <div class="term-question-line" id="termQuestionLine"></div>
+            <div class="term-input-row" id="termInputRow">
+              <span class="term-gt">&gt;&nbsp;</span>
+              <input type="text" id="termInput" class="term-input-field" placeholder="type your name…" maxlength="40" autocomplete="off" spellcheck="false">
+              <button id="termSubmit" class="term-submit-btn" aria-label="Submit name">↵</button>
+            </div>
+          </div>
+          <!-- Status bar -->
+          <div class="editor-statusbar">
+            <span class="sb-item">C# 12</span>
+            <span class="sb-item">Console App</span>
+            <span class="sb-item sb-ok" id="termStatusDot">● Running</span>
+            <span class="sb-item sb-right">Interactive</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Text content -->
+      <div class="hero-content">
+        <span class="hero-pill reveal-hero">OpenSTAAD Bootcamp for Everyone &nbsp;→</span>
+        <h1 class="hero-hl reveal-hero">
+          Stop doing manually<br>
+          what <em>STAAD</em> can<br>
+          do for you.
+        </h1>
+        <p class="hero-sub reveal-hero">Automate STAAD. Reclaim your time.</p>
+        <div class="hero-body reveal-hero">
+          <p>Every hour you spend on repetitive STAAD tasks is an hour you are not spending on engineering that matters. Load combinations. Member queries. Report generation. You have done them hundreds of times. You will do them hundreds more — unless something changes.</p>
+          <p>OpenSTAAD gives you the tools to automate all of it. This bootcamp gives you the skills to use them. <strong>No programming background needed.</strong> Just STAAD knowledge you already have.</p>
+        </div>
+        <div class="hero-ctas reveal-hero">
+          <a href="#course" class="btn-primary">Join the Bootcamp — ₹12,000</a>
+          <a href="curriculum.html" class="btn-ghost">See What You Will Build</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="hero-scroll-line"></div>
+  </section>
+
+  <!-- ═══ STATS BAR ═══ -->
+  <div class="stats-bar">
+    <div class="container stats-inner">
+      <div class="stat">
+        <div class="stat-row">
+          <span class="stat-big">2 hrs</span>
+          <span class="stat-arrow">→</span>
+          <span class="stat-big accent">2 min</span>
+        </div>
+        <span class="stat-label">Task runtime after automation</span>
+      </div>
+      <div class="stat-rule"></div>
+      <div class="stat">
+        <span class="stat-big">Zero</span>
+        <span class="stat-label">coding background required</span>
+      </div>
+      <div class="stat-rule"></div>
+      <div class="stat">
+        <span class="stat-big">₹12,000</span>
+        <span class="stat-label">Complete bootcamp, all included</span>
+      </div>
+      <div class="stat-rule"></div>
+      <div class="stat">
+        <span class="stat-big">5 ★</span>
+        <span class="stat-label">Average student rating</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ABOUT ═══ -->
+  <section class="section about" id="about">
+    <div class="container about-inner">
+      <div class="about-text reveal">
+        <span class="eyebrow">About</span>
+        <h2>Built by an Engineer<br>Still in Practice.<br><em>Not a Classroom.</em></h2>
+        <p>There is a difference between someone who teaches automation and someone who uses it.</p>
+        <p>I use it. Every project. The tools I teach in this bootcamp are production-grade automations I built for real structural engineering work — live deadlines, real clients, actual loads.</p>
+        <p>Why does that matter? Because when you learn from someone still in the field, you get what works. Not what looks good in a tutorial.</p>
+        <p>The OpenSTAAD API is powerful. Most engineers never touch it because nobody showed them how. That is the gap Coding for Civil Engineers closes.</p>
+        <ul class="check-list">
+          <li>The exact automation approach I use on real projects</li>
+          <li>C# skills taught from a structural engineering context — not a computer science one</li>
+          <li>A working automation you built and own by the end</li>
+        </ul>
+        <p class="trust-line">"Trust me — the engineers who go through this do not go back to doing it manually."</p>
+        <div class="badges">
+          <span class="badge">Practising Structural Engineer</span>
+          <span class="badge">Production-Grade OpenSTAAD Tools</span>
+          <span class="badge">Zero-to-Automation Teaching</span>
+          <span class="badge">Trusted LinkedIn &amp; YouTube Audience</span>
+        </div>
+      </div>
+
+      <div class="about-visual reveal">
+        <div class="code-window">
+          <div class="code-bar">
+            <div class="code-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="code-filename">OpenSTAAD_Automation.cs</span>
+          </div>
+          <pre class="code-body"><code><span class="c-cmt">// Connect to the open STAAD model</span>
+<span class="c-typ">IOpenSTAAD</span> oSTAAD =
+  OpenSTAADUI.GetSTAADFile();
+
+<span class="c-typ">IOutput</span> output = oSTAAD.Output;
+<span class="c-typ">int</span> memberCount = oSTAAD.Geometry
+  .GetMemberCount();
+
+<span class="c-cmt">// Extract forces — fully automated</span>
+<span class="c-kw">for</span> (<span class="c-typ">int</span> i = 1; i &lt;= memberCount; i++)
+{
+  <span class="c-typ">double</span>[] forces =
+    output.GetMemberEndForces(
+      i, loadCase, unit);
+
+  ExportToReport(forces);
+}
+
+<span class="c-cmt">// Done. In seconds, not hours.</span></code></pre>
+        </div>
+        <div class="exp-card">
+          <span class="exp-num">5+</span>
+          <span class="exp-label">years of production<br>OpenSTAAD automation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SERVICES ═══ -->
+  <section class="section services" id="course">
+    <div class="container">
+      <div class="section-hd reveal">
+        <span class="eyebrow">Course</span>
+        <h2>One Course Built for the Engineer<br>Who Is Done Wasting Time.</h2>
+      </div>
+
+      <div class="cards-grid">
+
+        <!-- Featured -->
+        <div class="card card-featured reveal">
+          <div class="card-top">
+            <span class="enroll-badge">Now Enrolling</span>
+            <h3>OpenSTAAD Bootcamp<br>for Everyone</h3>
+            <p class="outcome-label">What changes after this bootcamp:</p>
+            <p class="outcome-body">Tasks that take you 2 hours run in under 2 minutes. Results that require manual extraction are pulled automatically. Reports that need reformatting generate themselves. That is not an exaggeration. That is OpenSTAAD doing what it was designed to do — with you in control of it.</p>
+          </div>
+          <div class="card-curriculum">
+            <p class="curr-label">What you will learn</p>
+            <ul>
+              <li>C# fundamentals — taught for engineers, not computer scientists</li>
+              <li>OpenSTAAD API — how to connect, use, extract, and automate</li>
+              <li>Real automation builds — not toy examples, the kind you will actually use</li>
+            </ul>
+          </div>
+          <div class="card-foot">
+            <div class="card-who">
+              <span class="who-label">Who this is for</span>
+              <p>Structural engineers using STAAD on live projects. Zero programming background required. If you know STAAD, you have everything you need to start.</p>
+            </div>
+            <div class="price-row">
+              <span class="price">₹12,000</span>
+              <a href="#contact" class="btn-primary">Reserve Your Seat</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Corporate -->
+        <div class="card card-corp reveal">
+          <div class="corp-icon">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="20" width="32" height="18" rx="3" stroke="#1D9E75" stroke-width="2"/>
+              <path d="M14 20V15a8 8 0 0116 0v5" stroke="#1D9E75" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="22" cy="29" r="3" fill="#1D9E75"/>
+            </svg>
+          </div>
+          <h3>Corporate Training</h3>
+          <p class="corp-sub">For Teams Running STAAD at Scale</p>
+          <p>If your firm runs STAAD across multiple projects and teams, the time lost to manual work compounds fast.</p>
+          <p>A structured OpenSTAAD automation programme means your engineers stop reinventing the same workflows. Standardised. Repeatable. Faster.</p>
+          <a href="#contact" class="btn-outline">Talk to Me About Team Training</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIALS ═══ -->
+  <section class="section testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-hd reveal">
+        <span class="eyebrow">Testimonials</span>
+        <h2>Engineers Who Have Already<br>Made the Switch</h2>
+      </div>
+
+      <div class="testi-grid">
+
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>"It was a very helpful course. Even though I am a novice coder, by the end of the course I could code and create automation tools. Parishith explained all the concepts thoroughly and cleared doubts patiently. Highly recommend to structural engineers looking to automate their workflows, saving lot of time."</p>
+          <div class="testi-author">
+            <div class="avatar">AP</div>
+            <div>
+              <strong>Ankita Patel</strong>
+              <span>Structural Engineer &amp; Project Manager</span>
+              <span>M.P.Prime Structures Pvt Ltd</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>"The overall experience was excellent. The course was well structured, engaging and extremely informative. The course was very helpful and provided practical knowledge that I can apply directly in my work. It was definitely worth both the time and investment. The most unique aspect was the combination of real-life examples and interactive sessions."</p>
+          <div class="testi-author">
+            <div class="avatar">SG</div>
+            <div>
+              <strong>Sanjaya Kumar Gouda</strong>
+              <span>Senior Structural Engineer</span>
+              <span>Roofings Middle East</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>"A great experience that was incredibly informative and efficient. Parishith was an outstanding teacher who made learning engaging, helping me absorb a ton in a short period of time. 5/5 Stars – Truly inspiring for structural engineers like me!"</p>
+          <div class="testi-author">
+            <div class="avatar">SP</div>
+            <div>
+              <strong>Saad Patel</strong>
+              <span>Senior Engineer</span>
+              <span>Tecnimont</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal">
+          <div class="stars">★★★★☆</div>
+          <p>"Overall experience was amazing and had very good exposure regarding automation and use of AI in our day to day work. The cohort session was very helpful and full paisa wasool. Specifically designed for the structural engineering domain and Parishith has really tried to give his best."</p>
+          <div class="testi-author">
+            <div class="avatar">SK</div>
+            <div>
+              <strong>Shishir S. Kadam</strong>
+              <span>Engineering Manager</span>
+              <span>Tata Consulting Engineers (TCE)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>"The course was really helpful and interesting, providing tremendous insight for the use of programming and automation in our field. This course definitely will improve our working style and will save a lot of valuable time and efforts. I would rate this course 5 out of 5 — exceeded my expectations!!"</p>
+          <div class="testi-author">
+            <div class="avatar">VR</div>
+            <div>
+              <strong>Varun Raj</strong>
+              <span>Senior Structural Design Engineer</span>
+              <span>SKYNR Engineering Pvt. Ltd.</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="section faq" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions Engineers Actually Ask</h2>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">Do I need programming experience to join this bootcamp?</button>
+          <div class="faq-a">
+            <p>No. Zero programming background is the starting point, not a barrier. The bootcamp is built for practising structural engineers who know STAAD but have never written a line of code. Week 1 starts with the absolute basics — variables, loops, conditions — taught in the context of structural engineering, not computer science. By Week 3 you are already writing real OpenSTAAD automation. Trust me, if you know STAAD, you have everything you need to start.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">What exactly will I be able to do after completing the OpenSTAAD Bootcamp?</button>
+          <div class="faq-a">
+            <p>You will walk away with four working automation tools you built yourself: a 2D PEB Frame Generator, an MTO Generation Tool, a Load Export Tool, and a complete custom tool you define and deliver in the final week. Beyond the tools, you will understand the OpenSTAAD API well enough to automate your own workflows — load combinations, member queries, result extraction, report generation. The kind of work that currently takes you hours.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">How long is the bootcamp and what is the weekly time commitment?</button>
+          <div class="faq-a">
+            <p>The bootcamp runs over 5 weeks with 10 sessions — two sessions per week. Each session is focused and structured: no filler, no theory for the sake of theory. You will need time between sessions to practice and build. Expect roughly 3 to 5 hours per week between live sessions and hands-on work. It is designed for working engineers with real project deadlines.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">What is the fee for the OpenSTAAD Bootcamp and what does it include?</button>
+          <div class="faq-a">
+            <p>The bootcamp fee is Rs. 12,000. That covers all 10 live cohort sessions, the full C# and OpenSTAAD curriculum, hands-on mini projects each week, and direct access to Parishith throughout the cohort. You are not buying a recorded course you might never finish. You are joining a structured cohort with accountability built in. For corporate or team training, reach out directly for a separate conversation.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">Which version of STAAD.Pro do I need? Will this work with my current setup?</button>
+          <div class="faq-a">
+            <p>The OpenSTAAD API is available across STAAD.Pro versions that support the COM-based interface — which covers most versions engineers are actively using on live projects. You will need a installation of STAAD.Pro and Visual Studio (free Community edition works). Specific setup steps are covered in Session 1 so you are not left guessing before you start.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">How is this bootcamp different from free YouTube tutorials on OpenSTAAD?</button>
+          <div class="faq-a">
+            <p>Most OpenSTAAD content online shows you isolated snippets — one function, one use case, no context. What is missing is the engineering judgment behind it: when to automate, how to structure the code, what a production-grade tool actually looks like. This bootcamp is built from automations used on real structural engineering projects with real clients and real deadlines. That context is what turns a tutorial into a skill.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">I am a senior engineer — is this bootcamp still relevant for me?</button>
+          <div class="faq-a">
+            <p>Yes — and arguably more so. The engineers who get the most out of this are the ones who already understand what the repetitive work costs them. Senior engineers and heads of engineering see the ROI immediately because they know exactly which tasks are eating their team's time. The cohort has included Engineering Managers and Heads of Engineering alongside junior engineers. The programming is taught from scratch; the application is at whatever level you bring to it.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">Will I get support if I get stuck during the bootcamp?</button>
+          <div class="faq-a">
+            <p>Yes. This is a live cohort, not a self-paced course you are left to figure out alone. Sessions include time for questions, and Parishith is accessible throughout the programme. Doubts get cleared in real time, not in a ticket queue. That is one of the core reasons a cohort format was chosen over a pre-recorded course.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">Is C# the right language for STAAD automation, or should I learn Python instead?</button>
+          <div class="faq-a">
+            <p>C# is the right language for OpenSTAAD automation — full stop. The OpenSTAAD API is a COM-based interface designed for Windows desktop applications, and C# with Visual Studio is the environment it was built for. Python can interact with COM objects too, but the tooling, examples, and community around OpenSTAAD are desktop first. You will learn C# here because that is what actually works cleanly with STAAD.Pro in production.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <button class="faq-q" aria-expanded="false">What happens if I miss a session during the bootcamp?</button>
+          <div class="faq-a">
+            <p>Recordings of each session will be shared within 24 hours of the session. You can follow up the session through the recordings.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA BAND ═══ -->
+  <section class="cta-band">
+    <div class="cta-grid-bg"></div>
+    <div class="container cta-inner reveal">
+      <h2>The Next Project Will Be Faster.<br>Or It Will Not.<br><em>That Is the Only Choice.</em></h2>
+      <p>The repetitive STAAD work is not going away. The deadlines are not getting longer. What changes is whether you are still doing it manually six months from now — or whether your automation handles it while you focus on the engineering.</p>
+      <p>OpenSTAAD Bootcamp for Everyone is the clearest path from where you are now to where you want to be. <strong>₹12,000. No prior coding required. Real tools, real results.</strong></p>
+      <div class="cta-btns">
+        <a href="#contact" class="btn-dark">Join the Bootcamp Now</a>
+        <a href="#contact" class="btn-dark-ghost">Questions first? Let us talk.</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="section contact" id="contact">
+    <div class="container contact-inner">
+      <div class="contact-text reveal">
+        <span class="eyebrow light">Contact</span>
+        <h2>Specific Question?<br>You Will Get a<br>Specific Answer.</h2>
+        <p>If you are wondering whether this is right for your experience level, what the weekly commitment looks like, or what exactly you will walk away with — ask.</p>
+        <p>Do check out the course page first. Being said that, if your question is not answered there, I want to hear it directly.</p>
+        <p class="direct-line">No sales pitch. A real conversation.</p>
+      </div>
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <div class="form-row">
+          <label for="fname">Name</label>
+          <input type="text" id="fname" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <label for="femail">Email</label>
+          <input type="email" id="femail" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-row">
+          <label for="fmessage">Message</label>
+          <textarea id="fmessage" name="message" rows="4" placeholder="What would you like to know?" required></textarea>
+        </div>
+        <div class="form-row">
+          <label for="fautomate">What do you want to automate? <span class="opt">(optional)</span></label>
+          <input type="text" id="fautomate" name="automate" placeholder="e.g. Load combination generation, member force extraction…">
+        </div>
+        <button type="submit" class="btn-primary btn-submit">Send Your Question</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-mark">CfCE</span>
+        <span class="footer-tag">Automate STAAD. Reclaim your time.</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="#about">About</a>
+        <a href="#course">Course</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2025 Coding for Civil Engineers · codingforcivilengineers.com</p>
+    </div>
+  </footer>
+
+  <script>
+    // ── Scroll reveal ──
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Hero fires on load with stagger
+    document.querySelectorAll('.reveal-hero').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), 100 + i * 140);
+    });
+
+    // ── Nav shadow on scroll ──
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 24);
+    }, { passive: true });
+
+    // ── Hamburger ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+    document.querySelectorAll('.mob-link').forEach(l => {
+      l.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+      });
+    });
+
+    // ── Form submit ──
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = 'Message sent — I will be in touch.';
+      btn.disabled = true;
+      btn.style.background = '#14805e';
+      btn.style.boxShadow = 'none';
+    });
+
+    // ── FAQ accordion ──
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const answer = btn.nextElementSibling;
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        // Close all others
+        document.querySelectorAll('.faq-q').forEach(b => {
+          b.setAttribute('aria-expanded', 'false');
+          b.nextElementSibling.classList.remove('open');
+        });
+        if (!isOpen) {
+          btn.setAttribute('aria-expanded', 'true');
+          answer.classList.add('open');
+        }
+      });
+    });
+  </script>
+
+  <!-- ═══ CHAT WIDGETS ═══ -->
+  <div class="cw" id="cw">
+
+    <!-- Q&A Panel -->
+    <div class="cw-panel" id="cwPanel" aria-hidden="true">
+      <div class="cw-header">
+        <div class="cw-header-info">
+          <div class="cw-avatar">P</div>
+          <div class="cw-header-text">
+            <span class="cw-name">Parishith</span>
+            <span class="cw-status">AI Assistant · CfCE</span>
+          </div>
+        </div>
+        <button class="cw-close" id="cwClose" aria-label="Close chat">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="cw-messages" id="cwMessages">
+        <div class="cw-msg cw-bot">
+          <p>Got questions about the OpenSTAAD Bootcamp or STAAD automation? Ask away. trust me, no question is too basic here.</p>
+        </div>
+        <div class="cw-typing" id="cwTyping">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="cw-input-row">
+        <input type="text" id="cwInput" class="cw-input" placeholder="Ask me anything…" autocomplete="off" maxlength="500"/>
+        <button class="cw-send" id="cwSend" aria-label="Send message">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M1.5 8h13M8 1.5L14.5 8 8 14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Proposal Panel -->
+    <div class="cw-panel pw-panel" id="pwPanel" aria-hidden="true">
+      <div class="pw-header">
+        <div class="cw-header-info">
+          <div class="pw-avatar">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect x="2" y="1" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M5 6h8M5 9h8M5 12h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="cw-header-text">
+            <span class="cw-name">Get a Proposal</span>
+            <span class="cw-status">Step <span id="pwStepNum">—</span> of 6</span>
+          </div>
+        </div>
+        <button class="cw-close" id="pwClose" aria-label="Close proposal">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="pw-progress-wrap">
+        <div class="pw-progress-fill" id="pwProgressFill"></div>
+      </div>
+      <div class="cw-messages" id="pwMessages">
+        <div class="cw-typing" id="pwTyping">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="cw-input-row">
+        <input type="text" id="pwInput" class="cw-input" placeholder="Type your answer…" autocomplete="off" maxlength="500"/>
+        <button class="cw-send" id="pwSend" aria-label="Send answer">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M1.5 8h13M8 1.5L14.5 8 8 14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Launchers -->
+    <div class="cw-launchers" id="cwLaunchers">
+      <button class="pw-launch-btn" id="pwBubble">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <rect x="2" y="1" width="14" height="16" rx="2" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M5 6h8M5 9h8M5 12h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <span>Get Proposal</span>
+      </button>
+      <button class="cw-bubble" id="cwBubble" aria-label="Open chat assistant">
+        <svg width="20" height="20" viewBox="0 0 22 22" fill="none">
+          <path d="M11 2C6.03 2 2 5.58 2 10c0 1.9.72 3.65 1.92 5.06L3 20l5.32-1.52A9.34 9.34 0 0011 18c4.97 0 9-3.58 9-8s-4.03-8-9-8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+        </svg>
+        <span class="cw-bubble-label">Ask me anything</span>
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+  (function () {
+    var launchers = document.getElementById('cwLaunchers');
+
+    function hideLaunchers() { launchers.classList.add('cw-launchers-hidden'); }
+    function showLaunchers() { launchers.classList.remove('cw-launchers-hidden'); }
+
+    // ── Q&A WIDGET ──────────────────────────────
+    var cwBubble   = document.getElementById('cwBubble');
+    var cwPanel    = document.getElementById('cwPanel');
+    var cwClose    = document.getElementById('cwClose');
+    var cwInput    = document.getElementById('cwInput');
+    var cwSend     = document.getElementById('cwSend');
+    var cwMessages = document.getElementById('cwMessages');
+    var cwTyping   = document.getElementById('cwTyping');
+    var qaHistory  = [];
+    var qaBusy     = false;
+
+    function openQA() {
+      cwPanel.classList.add('cw-open');
+      cwPanel.setAttribute('aria-hidden', 'false');
+      hideLaunchers();
+      cwMessages.scrollTop = cwMessages.scrollHeight;
+      cwInput.focus();
+    }
+    function closeQA() {
+      cwPanel.classList.remove('cw-open');
+      cwPanel.setAttribute('aria-hidden', 'true');
+      showLaunchers();
+    }
+    function qaAddMsg(role, text) {
+      var d = document.createElement('div');
+      d.className = 'cw-msg ' + (role === 'user' ? 'cw-user' : 'cw-bot');
+      var p = document.createElement('p'); p.textContent = text; d.appendChild(p);
+      cwMessages.insertBefore(d, cwTyping);
+      cwMessages.scrollTop = cwMessages.scrollHeight;
+    }
+    function qaDisable(s) { qaBusy = s; cwInput.disabled = s; cwSend.disabled = s; }
+
+    async function qaSend() {
+      var text = cwInput.value.trim();
+      if (!text || qaBusy) return;
+      qaHistory.push({ role: 'user', content: text });
+      qaAddMsg('user', text);
+      cwInput.value = '';
+      qaDisable(true);
+      cwTyping.style.display = 'flex';
+      cwMessages.scrollTop = cwMessages.scrollHeight;
+      try {
+        var res = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: qaHistory }) });
+        var data = await res.json();
+        cwTyping.style.display = 'none';
+        var reply = data.reply || data.error || 'Something went wrong. Please try again or use the contact form.';
+        if (data.reply) qaHistory.push({ role: 'assistant', content: data.reply });
+        qaAddMsg('bot', reply);
+      } catch (e) {
+        cwTyping.style.display = 'none';
+        qaAddMsg('bot', 'Something went wrong. Please try again or use the contact form.');
+      } finally {
+        qaDisable(false); cwInput.focus();
+      }
+    }
+
+    cwBubble.addEventListener('click', openQA);
+    cwClose.addEventListener('click', closeQA);
+    cwSend.addEventListener('click', qaSend);
+    cwInput.addEventListener('keydown', function(e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); qaSend(); } });
+
+    // ── PROPOSAL WIDGET ──────────────────────────
+    var pwBubble      = document.getElementById('pwBubble');
+    var pwPanel       = document.getElementById('pwPanel');
+    var pwClose       = document.getElementById('pwClose');
+    var pwInput       = document.getElementById('pwInput');
+    var pwSend        = document.getElementById('pwSend');
+    var pwMessages    = document.getElementById('pwMessages');
+    var pwTyping      = document.getElementById('pwTyping');
+    var pwProgressFill = document.getElementById('pwProgressFill');
+    var pwStepNum     = document.getElementById('pwStepNum');
+    var pwHistory     = [];
+    var pwBusy        = false;
+    var pwStarted     = false;
+    var pwComplete    = false;
+
+    function pwSetProgress(step) {
+      pwProgressFill.style.width = ((step / 6) * 100) + '%';
+      pwStepNum.textContent = step;
+    }
+    function openPW() {
+      pwPanel.classList.add('cw-open');
+      pwPanel.setAttribute('aria-hidden', 'false');
+      hideLaunchers();
+      pwMessages.scrollTop = pwMessages.scrollHeight;
+      if (!pwStarted) { pwStarted = true; pwAutoStart(); }
+      else { pwInput.focus(); }
+    }
+    function closePW() {
+      pwPanel.classList.remove('cw-open');
+      pwPanel.setAttribute('aria-hidden', 'true');
+      showLaunchers();
+    }
+    function pwAddMsg(role, text) {
+      var d = document.createElement('div');
+      d.className = 'cw-msg ' + (role === 'user' ? 'cw-user' : 'cw-bot');
+      var p = document.createElement('p'); p.textContent = text; d.appendChild(p);
+      pwMessages.insertBefore(d, pwTyping);
+      pwMessages.scrollTop = pwMessages.scrollHeight;
+    }
+    function pwDisable(s) { pwBusy = s; pwInput.disabled = s; pwSend.disabled = s; }
+
+    async function pwAutoStart() {
+      pwDisable(true);
+      pwTyping.style.display = 'flex';
+      pwMessages.scrollTop = pwMessages.scrollHeight;
+      var initMsg = { role: 'user', content: "I'd like to get a proposal." };
+      pwHistory.push(initMsg);
+      try {
+        var res = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: pwHistory }) });
+        var data = await res.json();
+        pwTyping.style.display = 'none';
+        if (data.reply) {
+          pwHistory.push({ role: 'assistant', content: data.reply });
+          pwAddMsg('bot', data.reply);
+          if (data.intake_step) pwSetProgress(data.intake_step);
+        }
+      } catch (e) {
+        pwTyping.style.display = 'none';
+        pwAddMsg('bot', 'Something went wrong getting started. Please close and try again.');
+      } finally {
+        pwDisable(false); pwInput.focus();
+      }
+    }
+
+    async function pwSendMsg() {
+      var text = pwInput.value.trim();
+      if (!text || pwBusy || pwComplete) return;
+      pwHistory.push({ role: 'user', content: text });
+      pwAddMsg('user', text);
+      pwInput.value = '';
+      pwDisable(true);
+      pwTyping.style.display = 'flex';
+      pwMessages.scrollTop = pwMessages.scrollHeight;
+      try {
+        var res = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: pwHistory }) });
+        var data = await res.json();
+        pwTyping.style.display = 'none';
+        if (data.reply) {
+          pwHistory.push({ role: 'assistant', content: data.reply });
+          pwAddMsg('bot', data.reply);
+        }
+        if (data.intake_step) pwSetProgress(data.intake_step);
+        if (data.intake_complete) {
+          pwComplete = true;
+          pwProgressFill.style.width = '100%';
+          pwStepNum.textContent = '6';
+          pwDisable(true);
+          fetch('/api/generate-proposal', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ intakeData: data.intake_data, conversation: pwHistory }) }).catch(function() {});
+        }
+      } catch (e) {
+        pwTyping.style.display = 'none';
+        pwAddMsg('bot', 'Something went wrong. Please try again.');
+      } finally {
+        if (!pwComplete) { pwDisable(false); pwInput.focus(); }
+      }
+    }
+
+    pwBubble.addEventListener('click', openPW);
+    pwClose.addEventListener('click', closePW);
+    pwSend.addEventListener('click', pwSendMsg);
+    pwInput.addEventListener('keydown', function(e) { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); pwSendMsg(); } });
+  })();
+  </script>
+
+  <script>
+  (function () {
+    var prompts = [
+      "Console.ReadLine() is waiting — who's there?",
+      "New session. Identify yourself, engineer:",
+      "STAAD is open. So is this terminal. Your name?",
+      "Process started. Enter your name to continue:",
+      "Automation doesn't know you yet. Who are you?",
+      "First variable — your name. What is it?",
+      "Alright engineer, let's begin. What's your name?",
+      "You've found the terminal. Now name yourself:",
+      "Build log entry #1 — who's running this session?",
+      "Input required: your name. Everything else, we automate.",
+    ];
+
+    var p = prompts[Math.floor(Math.random() * prompts.length)];
+
+    function escHtml(s) {
+      return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    document.getElementById('termPromptStr').textContent = '"' + p + ' "';
+    document.getElementById('termQuestionLine').textContent = p + ' ';
+
+    var input     = document.getElementById('termInput');
+    var submitBtn = document.getElementById('termSubmit');
+    var consoleEl = document.getElementById('termConsole');
+    var inputRow  = document.getElementById('termInputRow');
+    var done      = false;
+
+    function addLine(html, cls, delay) {
+      setTimeout(function () {
+        var div = document.createElement('div');
+        div.className = 'term-out' + (cls ? ' ' + cls : '');
+        div.innerHTML = html;
+        consoleEl.appendChild(div);
+        consoleEl.scrollTop = consoleEl.scrollHeight;
+      }, delay);
+    }
+
+    function handleSubmit() {
+      if (done) return;
+      var name = input.value.trim();
+      if (!name) { input.focus(); return; }
+      done = true;
+
+      inputRow.innerHTML =
+        '<span class="term-gt">&gt;&nbsp;</span>' +
+        '<span style="color:var(--white)">' + escHtml(name) + '</span>';
+
+      var codeHtml =
+        '<span class="cs-fn">Console</span>.<span class="cs-fn">WriteLine</span>(' +
+        '<span class="cs-str">$"Very happy to have you looking into ' +
+        'Coding for Civil Engineers, <span class="cs-interp">{name}</span>!"</span>);';
+
+      var resultHtml =
+        '&#x25B6;&nbsp;&nbsp;Very happy to have you looking into ' +
+        'Coding for Civil Engineers, ' + escHtml(name) + '!';
+
+      addLine('', '', 280);
+      addLine(codeHtml, 'term-out-code', 580);
+      addLine('', '', 1020);
+      addLine(resultHtml, 'term-out-result', 1150);
+
+      setTimeout(function () {
+        var s = document.getElementById('termStatusDot');
+        s.textContent = '\u2713 Compiled';
+        s.style.color = '#a8f0c6';
+      }, 580);
+    }
+
+    submitBtn.addEventListener('click', handleSubmit);
+    input.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') handleSubmit();
+    });
+
+    setTimeout(function () { input.focus(); }, 900);
+  })();
+  </script>
+
+</body>
+</html>

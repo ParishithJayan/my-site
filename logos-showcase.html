@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CfCE Logo Options</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1E2D40;
+      --accent:  #1D9E75;
+      --pop:     #FAC775;
+      --surface: #F4F6F8;
+      --muted:   #8a9ab0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: #eef0f3;
+      color: var(--primary);
+      min-height: 100vh;
+      padding: 60px 40px;
+    }
+
+    /* ── Header ── */
+    .page-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .page-header h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1.9rem;
+      color: var(--primary);
+      letter-spacing: -0.01em;
+    }
+    .page-header p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-top: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Grid ── */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .logo-col { display: flex; flex-direction: column; gap: 16px; }
+
+    .col-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--primary);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+    }
+
+    /* ── Panels ── */
+    .panel {
+      border-radius: 12px;
+      padding: 44px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .panel-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .panel-light {
+      background: #ffffff;
+      border: 1px solid rgba(30,45,64,0.08);
+    }
+    .panel-light .panel-label { color: var(--muted); }
+
+    .panel-dark {
+      background: var(--primary);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .panel-dark .panel-label { color: rgba(255,255,255,0.4); }
+
+    /* ── Inline SVG wrapper ── */
+    .logo-wrap svg { display: block; max-width: 100%; height: auto; }
+
+    /* ── Divider ── */
+    .divider {
+      grid-column: 1 / -1;
+      height: 1px;
+      background: rgba(30,45,64,0.1);
+      margin: 8px 0;
+    }
+
+    /* ── Notes ── */
+    .notes {
+      max-width: 1000px;
+      margin: 40px auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .note {
+      background: white;
+      border-radius: 10px;
+      padding: 22px 24px;
+      border-left: 3px solid var(--accent);
+    }
+    .note h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+    .note p, .note li {
+      font-size: 0.83rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .note ul { padding-left: 16px; }
+    .note li { margin-bottom: 4px; }
+
+    @media (max-width: 680px) {
+      .logo-grid, .notes { grid-template-columns: 1fr; }
+      body { padding: 40px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <h1>CfCE — Logo Options</h1>
+    <p>Coding for Civil Engineers &nbsp;·&nbsp; Two concepts, light &amp; dark backgrounds</p>
+  </div>
+
+  <div class="logo-grid">
+
+    <!-- ── LOGO V1 ── -->
+    <div class="logo-col">
+      <div class="col-label">Logo V1 — Mark + Wordmark</div>
+
+      <!-- Light -->
+      <div class="panel panel-light">
+        <div class="panel-label">Light background</div>
+        <div class="logo-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 318 68" fill="none">
+            <line x1="6"  y1="14" x2="6"  y2="58" stroke="#1D9E75" stroke-width="5" stroke-linecap="round"/>
+            <line x1="46" y1="14" x2="46" y2="58" stroke="#1D9E75" stroke-width="5" stroke-linecap="round"/>
+            <line x1="4"  y1="14" x2="48" y2="14" stroke="#1D9E75" stroke-width="5" stroke-linecap="round"/>
+            <line x1="14" y1="36" x2="38" y2="36" stroke="#1D9E75" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
+            <circle cx="26" cy="50" r="3.5" fill="#FAC775"/>
+            <text y="45" font-family="'Barlow Condensed', sans-serif" font-weight="700" font-size="40" letter-spacing="-0.5">
+              <tspan x="66" fill="#1E2D40">C</tspan><tspan fill="#1D9E75">f</tspan><tspan fill="#1E2D40">CE</tspan>
+            </text>
+            <text x="67" y="60" font-family="'Barlow', sans-serif" font-weight="400" font-size="9.5" fill="#8a9ab0" letter-spacing="2.6">CODING FOR CIVIL ENGINEERS</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Dark -->
+      <div class="panel panel-dark">
+        <div class="panel-label">Dark background</div>
+        <div class="logo-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 318 68" fill="none">
+            <line x1="6"  y1="14" x2="6"  y2="58" stroke="#1D9E75" stroke-width="5" stroke-linecap="round"/>
+            <line x1="46" y1="14" x2="46" y2="58" stroke="#1D9E75" stroke-width="5" stroke-linecap="round"/>
+            <line x1="4"  y1="14" x2="48" y2="14" stroke="#1D9E75" stroke-width="5" stroke-linecap="round"/>
+            <line x1="14" y1="36" x2="38" y2="36" stroke="#1D9E75" stroke-width="2" stroke-linecap="round" opacity="0.45"/>
+            <circle cx="26" cy="50" r="3.5" fill="#FAC775"/>
+            <text y="45" font-family="'Barlow Condensed', sans-serif" font-weight="700" font-size="40" letter-spacing="-0.5">
+              <tspan x="66" fill="#ffffff">C</tspan><tspan fill="#1D9E75">f</tspan><tspan fill="#ffffff">CE</tspan>
+            </text>
+            <text x="67" y="60" font-family="'Barlow', sans-serif" font-weight="400" font-size="9.5" fill="rgba(255,255,255,0.38)" letter-spacing="2.6">CODING FOR CIVIL ENGINEERS</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── LOGO V2 ── -->
+    <div class="logo-col">
+      <div class="col-label">Logo V2 — Typographic</div>
+
+      <!-- Light -->
+      <div class="panel panel-light">
+        <div class="panel-label">Light background</div>
+        <div class="logo-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 76" fill="none">
+            <text x="0" y="54" font-family="'Barlow Condensed', sans-serif" font-weight="600" font-size="56" fill="#1E2D40">C</text>
+            <text x="32" y="54" font-family="'Barlow Condensed', sans-serif" font-weight="600" font-size="56" fill="#1D9E75">f</text>
+            <rect x="32" y="57" width="18" height="3" rx="1.5" fill="#FAC775"/>
+            <text x="50" y="54" font-family="'Barlow Condensed', sans-serif" font-weight="600" font-size="56" fill="#1E2D40">CE</text>
+            <line x1="0" y1="63" x2="228" y2="63" stroke="#1D9E75" stroke-width="1.5" opacity="0.4"/>
+            <text x="0" y="74" font-family="'Barlow', sans-serif" font-weight="400" font-size="8.5" fill="#8a9ab0" letter-spacing="3.2">CODING FOR CIVIL ENGINEERS</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Dark -->
+      <div class="panel panel-dark">
+        <div class="panel-label">Dark background</div>
+        <div class="logo-wrap">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 76" fill="none">
+            <text x="0" y="54" font-family="'Barlow Condensed', sans-serif" font-weight="600" font-size="56" fill="#ffffff">C</text>
+            <text x="32" y="54" font-family="'Barlow Condensed', sans-serif" font-weight="600" font-size="56" fill="#1D9E75">f</text>
+            <rect x="32" y="57" width="18" height="3" rx="1.5" fill="#FAC775"/>
+            <text x="50" y="54" font-family="'Barlow Condensed', sans-serif" font-weight="600" font-size="56" fill="#ffffff">CE</text>
+            <line x1="0" y1="63" x2="228" y2="63" stroke="#1D9E75" stroke-width="1.5" opacity="0.5"/>
+            <text x="0" y="74" font-family="'Barlow', sans-serif" font-weight="400" font-size="8.5" fill="rgba(255,255,255,0.38)" letter-spacing="3.2">CODING FOR CIVIL ENGINEERS</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── Notes ── -->
+  <div class="notes">
+    <div class="note">
+      <h3>Logo V1 — Mark + Wordmark</h3>
+      <ul>
+        <li>The mark is a <strong>portal frame</strong> — the most recognisable structural engineering shape</li>
+        <li>The amber dot reads as a <strong>code cursor</strong> — engineering meets programming</li>
+        <li>Works at small sizes (favicon, app icon) and large</li>
+        <li>Use this when you need a standalone icon</li>
+      </ul>
+    </div>
+    <div class="note">
+      <h3>Logo V2 — Typographic</h3>
+      <ul>
+        <li>The <strong>"f" in teal</strong> creates an immediate focal point — distinctive at any size</li>
+        <li>The <strong>amber underline</strong> under "f" is a code cursor — subtle, readable</li>
+        <li>Strong on documents, slides, course materials</li>
+        <li>Best when no icon is needed — the letters carry the brand alone</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
