@@ -380,7 +380,7 @@ p { line-height: 1.78; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 56px;
-  align-items: center;
+  align-items: start;
   width: 100%;
 }
 
@@ -1603,6 +1603,9 @@ p { line-height: 1.78; }
 
 /* ── Panel ── */
 .cw-panel {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  right: 0;
   width: 360px;
   max-height: 520px;
   background: var(--white);
