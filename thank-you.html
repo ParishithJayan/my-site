@@ -80,46 +80,13 @@
       to   { opacity: 1; transform: none; }
     }
 
-    /* Info cards */
-    .ty-info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      margin: 32px 0 36px;
-      animation: fadeUp 0.5s 0.28s var(--ease) both;
-    }
-    .ty-info-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.09);
-      border-radius: var(--r);
-      padding: 18px 20px;
-      text-align: left;
-    }
-    .ty-info-icon {
-      font-size: 1.4rem;
-      margin-bottom: 8px;
-      display: block;
-      line-height: 1;
-    }
-    .ty-info-card strong {
-      display: block;
-      font-size: 0.86rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 5px;
-    }
-    .ty-info-card span {
-      font-size: 0.81rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.55;
-    }
-
     .ty-btns {
       display: flex;
       gap: 12px;
       justify-content: center;
       flex-wrap: wrap;
-      animation: fadeUp 0.5s 0.36s var(--ease) both;
+      margin-top: 36px;
+      animation: fadeUp 0.5s 0.28s var(--ease) both;
     }
 
     /* Footer */
@@ -134,7 +101,6 @@
     }
 
     @media (max-width: 600px) {
-      .ty-info-grid { grid-template-columns: 1fr; }
       .ty-btns { flex-direction: column; align-items: stretch; }
       .ty-btns a { text-align: center; justify-content: center; }
     }
@@ -169,29 +135,6 @@
         <p>Your payment has been received. Your seat in the <strong style="color:var(--white)">OpenSTAAD Bootcamp for Everyone</strong> is confirmed.</p>
 
         <p>Our team will be in touch over <strong style="color:var(--white)">WhatsApp or email within 4 hours</strong> of your registration — with the session schedule, joining link, and everything you need to get ready.</p>
-
-        <div class="ty-info-grid">
-          <div class="ty-info-card">
-            <span class="ty-info-icon">📱</span>
-            <strong>Expect a message soon</strong>
-            <span>WhatsApp or email within 4 hours with your onboarding details and session schedule.</span>
-          </div>
-          <div class="ty-info-card">
-            <span class="ty-info-icon">📅</span>
-            <strong>Session schedule</strong>
-            <span>Full schedule and calendar invites will be shared once you are onboarded to the cohort.</span>
-          </div>
-          <div class="ty-info-card">
-            <span class="ty-info-icon">🛠️</span>
-            <strong>Nothing to prepare now</strong>
-            <span>Setup instructions will be in the onboarding message. You do not need to install anything yet.</span>
-          </div>
-          <div class="ty-info-card">
-            <span class="ty-info-icon">💬</span>
-            <strong>Questions?</strong>
-            <span>Use the contact form on the main site — any question gets a direct answer, not a template.</span>
-          </div>
-        </div>
 
         <div class="ty-btns">
           <a href="index.html" class="btn-ghost">Back to Home</a>

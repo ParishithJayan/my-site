@@ -16,23 +16,41 @@
 
     /* ── Enroll Nav ── */
     .enroll-nav {
-      background: var(--primary);
-      padding: 16px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 200;
+      padding: 14px 0;
+      background: transparent;
+      transition: padding var(--t) var(--ease);
     }
     .enroll-nav-inner {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto;
       align-items: center;
-      justify-content: space-between;
+      height: 52px;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 100px;
+      padding: 0 10px 0 20px;
+      transition: box-shadow 0.35s var(--ease), border-color 0.35s var(--ease), background 0.35s var(--ease);
+    }
+    .enroll-nav.scrolled .enroll-nav-inner {
+      background: rgba(30, 45, 64, 0.55);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-color: rgba(255,255,255,0.12);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06);
     }
     .btn-back {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 0.88rem;
+      font-size: 0.84rem;
       font-weight: 600;
       color: rgba(255,255,255,0.72);
-      padding: 8px 20px;
+      padding: 9px 20px;
       border-radius: var(--r-pill);
       border: 1px solid rgba(255,255,255,0.16);
       transition: all var(--t) var(--ease);
@@ -46,7 +64,7 @@
     /* ── Page hero ── */
     .enroll-hero {
       background: var(--surface);
-      padding: 40px 0 56px;
+      padding: 120px 0 56px;
       text-align: center;
       border-bottom: 1px solid rgba(30,45,64,0.08);
     }
@@ -78,7 +96,7 @@
       display: grid;
       grid-template-columns: 1.15fr 1fr;
       gap: 24px;
-      align-items: start;
+      align-items: stretch;
     }
 
     /* ── Cohort card (left) ── */
@@ -128,35 +146,6 @@
       font-size: 0.8rem;
       color: rgba(255,255,255,0.4);
       padding-bottom: 7px;
-    }
-
-    /* Stats strip */
-    .cohort-stats {
-      display: flex;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .cohort-stat {
-      flex: 1;
-      padding: 20px 14px;
-      text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.06);
-    }
-    .cohort-stat:last-child { border-right: none; }
-    .cohort-stat-big {
-      display: block;
-      font-family: var(--font-display);
-      font-size: 1.7rem;
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1;
-      margin-bottom: 5px;
-    }
-    .cohort-stat-big.teal { color: var(--accent); }
-    .cohort-stat-label {
-      font-size: 0.68rem;
-      color: rgba(255,255,255,0.38);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
     }
 
     /* Content sections */
@@ -273,8 +262,6 @@
       border-radius: var(--r-xl);
       box-shadow: var(--shadow-lg);
       overflow: hidden;
-      position: sticky;
-      top: 24px;
     }
     .form-card-header {
       padding: 28px 32px 22px;
@@ -311,6 +298,7 @@
       box-shadow: 0 0 0 3px rgba(29,158,117,0.12);
     }
     .enroll-form .opt { color: #9aabb8; }
+    .req { color: var(--accent); font-weight: 700; }
 
     .btn-reserve {
       width: 100%;
@@ -364,7 +352,7 @@
 <body>
 
   <!-- NAV -->
-  <nav class="enroll-nav">
+  <nav class="enroll-nav" id="enrollNav">
     <div class="container enroll-nav-inner">
       <a href="index.html" class="logo">
         <span class="logo-mark">CfCE</span>
@@ -397,25 +385,6 @@
             <div class="cohort-price-row">
               <span class="cohort-price">₹12,000</span>
               <span class="cohort-price-note">All inclusive · No hidden fees</span>
-            </div>
-          </div>
-
-          <div class="cohort-stats">
-            <div class="cohort-stat">
-              <span class="cohort-stat-big">5</span>
-              <span class="cohort-stat-label">Weeks</span>
-            </div>
-            <div class="cohort-stat">
-              <span class="cohort-stat-big">10</span>
-              <span class="cohort-stat-label">Sessions</span>
-            </div>
-            <div class="cohort-stat">
-              <span class="cohort-stat-big teal">4</span>
-              <span class="cohort-stat-label">Tools Built</span>
-            </div>
-            <div class="cohort-stat">
-              <span class="cohort-stat-big">56+</span>
-              <span class="cohort-stat-label">Trained</span>
             </div>
           </div>
 
@@ -484,17 +453,17 @@
               <div class="enroll-error" id="enrollError"></div>
 
               <div class="form-row">
-                <label for="eName">Full Name</label>
+                <label for="eName">Full Name <span class="req">*</span></label>
                 <input type="text" id="eName" name="name" placeholder="Your full name" required autocomplete="name">
               </div>
 
               <div class="form-row">
-                <label for="eEmail">Email Address</label>
+                <label for="eEmail">Email Address <span class="req">*</span></label>
                 <input type="email" id="eEmail" name="email" placeholder="your@email.com" required autocomplete="email">
               </div>
 
               <div class="form-row">
-                <label for="ePhone">Phone / WhatsApp Number</label>
+                <label for="ePhone">Phone / WhatsApp Number <span class="req">*</span></label>
                 <input type="tel" id="ePhone" name="phone" placeholder="+91 98765 43210" required autocomplete="tel">
               </div>
 
@@ -522,6 +491,14 @@
       </div>
     </div>
   </main>
+
+  <script>
+    // Floating pill nav
+    const enrollNav = document.getElementById('enrollNav');
+    window.addEventListener('scroll', () => {
+      enrollNav.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+  </script>
 
   <script>
     const form   = document.getElementById('enrollForm');
