@@ -469,7 +469,7 @@
             </div>
             <div class="price-row">
               <span class="price">₹12,000</span>
-              <a href="#contact" class="btn-primary">Reserve Your Seat</a>
+              <a href="enroll.html" class="btn-primary">Reserve Your Seat</a>
             </div>
           </div>
         </div>
@@ -1022,11 +1022,11 @@
           btn.style.boxShadow = 'none';
           form.reset();
         } else {
-          btn.textContent = 'Something went wrong. Please try again.';
+          btn.textContent = data.error || 'Something went wrong. Please try again.';
           btn.disabled = false;
         }
-      } catch {
-        btn.textContent = 'Something went wrong. Please try again.';
+      } catch (err) {
+        btn.textContent = 'Network error: ' + err.message;
         btn.disabled = false;
       }
     });

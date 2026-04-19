@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserve Your Seat — OpenSTAAD Bootcamp · CfCE</title>
+  <meta name="description" content="Enroll in the OpenSTAAD Bootcamp for Everyone. 5 weeks, 10 sessions, 4 real tools. ₹12,000.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    body { background: var(--surface); }
+
+    /* ── Enroll Nav ── */
+    .enroll-nav {
+      background: var(--primary);
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .enroll-nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.72);
+      padding: 8px 20px;
+      border-radius: var(--r-pill);
+      border: 1px solid rgba(255,255,255,0.16);
+      transition: all var(--t) var(--ease);
+    }
+    .btn-back:hover {
+      color: var(--white);
+      border-color: rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.06);
+    }
+
+    /* ── Page hero ── */
+    .enroll-hero {
+      background: var(--primary);
+      padding: 40px 0 56px;
+      text-align: center;
+    }
+    .enroll-hero-eyebrow {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .enroll-hero h1 {
+      color: var(--white);
+      font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+      margin-bottom: 10px;
+    }
+    .enroll-hero p {
+      color: rgba(255,255,255,0.55);
+      font-size: 1rem;
+    }
+
+    /* ── Main layout ── */
+    .enroll-main {
+      padding: 0 0 88px;
+      margin-top: -32px;
+    }
+    .enroll-cols {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* ── Cohort card (left) ── */
+    .cohort-card {
+      background: var(--primary);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .cohort-card-header {
+      padding: 32px 36px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .cohort-enroll-badge {
+      display: inline-block;
+      background: var(--pop);
+      color: #6b3e00;
+      padding: 5px 14px;
+      border-radius: var(--r-pill);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .cohort-card-header h2 {
+      color: var(--white);
+      font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+      margin-bottom: 22px;
+      line-height: 1.15;
+    }
+    .cohort-price-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+    }
+    .cohort-price {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .cohort-price-note {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      padding-bottom: 7px;
+    }
+
+    /* Stats strip */
+    .cohort-stats {
+      display: flex;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .cohort-stat {
+      flex: 1;
+      padding: 20px 14px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+    .cohort-stat:last-child { border-right: none; }
+    .cohort-stat-big {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .cohort-stat-big.teal { color: var(--accent); }
+    .cohort-stat-label {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.38);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Content sections */
+    .cohort-section {
+      padding: 22px 36px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .cohort-section:last-child { border-bottom: none; }
+    .cohort-section-label {
+      display: block;
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      margin-bottom: 14px;
+    }
+
+    .cohort-includes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .cohort-includes li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.55;
+    }
+    .cohort-includes li::before {
+      content: '';
+      display: block;
+      flex-shrink: 0;
+      width: 19px;
+      height: 19px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background: rgba(29,158,117,0.18)
+        url("data:image/svg+xml,%3Csvg width='10' height='7' viewBox='0 0 10 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3.5L3.5 6L9 1' stroke='%231D9E75' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+        no-repeat center;
+    }
+
+    .build-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .build-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 11px;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.5;
+    }
+    .build-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
+      border-radius: 50%;
+      background: rgba(29,158,117,0.18);
+      color: var(--accent);
+      font-size: 0.68rem;
+      font-weight: 800;
+      margin-top: 2px;
+    }
+
+    /* Testimonial */
+    .cohort-quote {
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--r-sm) var(--r-sm) 0;
+      padding: 16px 20px;
+    }
+    .cohort-quote p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.65);
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+    .cohort-quote-author {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .cohort-quote-author .avatar {
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+      font-size: 0.62rem;
+    }
+    .cohort-quote-author strong {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--white);
+      font-weight: 700;
+    }
+    .cohort-quote-author span {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ── Form card (right) ── */
+    .form-card {
+      background: var(--white);
+      border-radius: var(--r-xl);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      position: sticky;
+      top: 24px;
+    }
+    .form-card-header {
+      padding: 28px 32px 22px;
+      border-bottom: 1px solid rgba(30,45,64,0.07);
+    }
+    .form-card-header h2 {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+    .form-card-header p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .form-card-body {
+      padding: 26px 32px 32px;
+    }
+
+    /* Form fields — light bg variant */
+    .enroll-form { display: flex; flex-direction: column; gap: 18px; }
+    .enroll-form .form-row label {
+      color: #3d4f63;
+    }
+    .enroll-form .form-row input {
+      background: var(--surface);
+      border: 1.5px solid rgba(30,45,64,0.14);
+      color: var(--primary);
+    }
+    .enroll-form .form-row input::placeholder { color: #9aabb8; }
+    .enroll-form .form-row input:focus {
+      border-color: var(--accent);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(29,158,117,0.12);
+    }
+    .enroll-form .opt { color: #9aabb8; }
+
+    .btn-reserve {
+      width: 100%;
+      padding: 17px 24px;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    /* Error message */
+    .enroll-error {
+      display: none;
+      background: #fff2f2;
+      border: 1px solid #f9c8c8;
+      border-radius: var(--r-sm);
+      padding: 11px 14px;
+      font-size: 0.84rem;
+      color: #c0392b;
+      line-height: 1.5;
+    }
+    .enroll-error.show { display: block; }
+
+    /* Security note */
+    .secure-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 14px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.5;
+    }
+    .secure-note svg { flex-shrink: 0; color: var(--accent); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .enroll-cols { grid-template-columns: 1fr; }
+      .form-card { position: static; }
+    }
+    @media (max-width: 600px) {
+      .cohort-card-header { padding: 24px 22px 20px; }
+      .cohort-section { padding: 18px 22px; }
+      .form-card-header, .form-card-body { padding: 20px 22px; }
+      .enroll-hero { padding: 32px 0 48px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="enroll-nav">
+    <div class="container enroll-nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-mark">CfCE</span>
+        <span class="logo-name">Coding for Civil Engineers</span>
+      </a>
+      <a href="index.html#course" class="btn-back">← Back to Course</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="enroll-hero">
+    <div class="container">
+      <span class="enroll-hero-eyebrow">Enrollment</span>
+      <h1>Reserve Your Seat in the<br><em>OpenSTAAD Bootcamp</em></h1>
+      <p>5 weeks · 10 sessions · 4 real tools built · Zero prior coding required</p>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main class="enroll-main">
+    <div class="container">
+      <div class="enroll-cols">
+
+        <!-- LEFT: Cohort details -->
+        <div class="cohort-card">
+
+          <div class="cohort-card-header">
+            <span class="cohort-enroll-badge">Now Enrolling</span>
+            <h2>OpenSTAAD Bootcamp<br>for Everyone</h2>
+            <div class="cohort-price-row">
+              <span class="cohort-price">₹12,000</span>
+              <span class="cohort-price-note">All inclusive · No hidden fees</span>
+            </div>
+          </div>
+
+          <div class="cohort-stats">
+            <div class="cohort-stat">
+              <span class="cohort-stat-big">5</span>
+              <span class="cohort-stat-label">Weeks</span>
+            </div>
+            <div class="cohort-stat">
+              <span class="cohort-stat-big">10</span>
+              <span class="cohort-stat-label">Sessions</span>
+            </div>
+            <div class="cohort-stat">
+              <span class="cohort-stat-big teal">4</span>
+              <span class="cohort-stat-label">Tools Built</span>
+            </div>
+            <div class="cohort-stat">
+              <span class="cohort-stat-big">56+</span>
+              <span class="cohort-stat-label">Trained</span>
+            </div>
+          </div>
+
+          <div class="cohort-section">
+            <span class="cohort-section-label">What is included</span>
+            <ul class="cohort-includes">
+              <li>All 10 live cohort sessions — structured, interactive, hands-on</li>
+              <li>Full C# and OpenSTAAD API curriculum, built from scratch</li>
+              <li>Hands-on mini projects every week — real tools, not toy examples</li>
+              <li>Direct access to Parishith throughout the cohort</li>
+              <li>Session recordings shared within 24 hours of each session</li>
+            </ul>
+          </div>
+
+          <div class="cohort-section">
+            <span class="cohort-section-label">Tools you will build</span>
+            <ul class="build-list">
+              <li>
+                <span class="build-num">1</span>
+                <span><strong style="color:var(--white);display:inline;">2D PEB Frame Generator</strong> — creates STAAD models from code</span>
+              </li>
+              <li>
+                <span class="build-num">2</span>
+                <span><strong style="color:var(--white);display:inline;">MTO Generation Tool</strong> — extracts material take-off directly from STAAD</span>
+              </li>
+              <li>
+                <span class="build-num">3</span>
+                <span><strong style="color:var(--white);display:inline;">Load Export Tool</strong> — pulls loads and reactions to Excel automatically</span>
+              </li>
+              <li>
+                <span class="build-num">4</span>
+                <span><strong style="color:var(--white);display:inline;">Your Complete Automation Tool</strong> — production-ready, yours to keep</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="cohort-section">
+            <span class="cohort-section-label">Who this is for</span>
+            <p style="font-size:0.9rem;color:rgba(255,255,255,0.68);line-height:1.68;">Practising structural engineers using STAAD on live projects. Zero programming background required. If you know STAAD, you have everything you need to start.</p>
+          </div>
+
+          <div class="cohort-section">
+            <div class="cohort-quote">
+              <p>"The course was well structured, engaging and extremely informative. It was definitely worth both the time and investment. The most unique aspect was the combination of real-life examples and interactive sessions."</p>
+              <div class="cohort-quote-author">
+                <div class="avatar">SG</div>
+                <div>
+                  <strong>Sanjaya Kumar Gouda</strong>
+                  <span>Senior Structural Engineer · Roofings Middle East</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: Enrollment form -->
+        <div class="form-card">
+          <div class="form-card-header">
+            <h2>Reserve Your Seat</h2>
+            <p>Fill in your details and complete payment to secure your place in the cohort.</p>
+          </div>
+          <div class="form-card-body">
+            <form class="enroll-form" id="enrollForm" novalidate>
+
+              <div class="enroll-error" id="enrollError"></div>
+
+              <div class="form-row">
+                <label for="eName">Full Name</label>
+                <input type="text" id="eName" name="name" placeholder="Your full name" required autocomplete="name">
+              </div>
+
+              <div class="form-row">
+                <label for="eEmail">Email Address</label>
+                <input type="email" id="eEmail" name="email" placeholder="your@email.com" required autocomplete="email">
+              </div>
+
+              <div class="form-row">
+                <label for="ePhone">Phone / WhatsApp Number</label>
+                <input type="tel" id="ePhone" name="phone" placeholder="+91 98765 43210" required autocomplete="tel">
+              </div>
+
+              <div class="form-row">
+                <label for="eCompany">Company Name <span class="opt">(optional)</span></label>
+                <input type="text" id="eCompany" name="company" placeholder="Your firm or organisation" autocomplete="organization">
+              </div>
+
+              <button type="submit" class="btn-primary btn-reserve" id="reserveBtn">
+                Reserve My Seat — ₹12,000
+              </button>
+
+              <div class="secure-note">
+                <svg width="13" height="14" viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.5 1.5L2 3.5v3.5c0 3 2 5 4.5 5.5C9 12 11 10 11 7V3.5L6.5 1.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+                  <path d="M4.5 7L6 8.5l3-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Secured by Razorpay &nbsp;·&nbsp; You will be redirected to complete payment
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const form   = document.getElementById('enrollForm');
+    const btn    = document.getElementById('reserveBtn');
+    const errBox = document.getElementById('enrollError');
+
+    function showError(msg) {
+      errBox.textContent = msg;
+      errBox.classList.add('show');
+      errBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+    function clearError() { errBox.classList.remove('show'); }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      clearError();
+
+      const name    = form.elements['name'].value.trim();
+      const email   = form.elements['email'].value.trim();
+      const phone   = form.elements['phone'].value.trim();
+      const company = form.elements['company'].value.trim();
+
+      if (!name || !email || !phone) {
+        showError('Please fill in your name, email address, and phone number.');
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        showError('Please enter a valid email address.');
+        return;
+      }
+
+      btn.textContent = 'Creating order…';
+      btn.disabled = true;
+
+      try {
+        const orderRes  = await fetch('/api/create-order', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify({ name, email, phone, company }),
+        });
+        const orderData = await orderRes.json();
+
+        if (!orderData.order_id) {
+          throw new Error(orderData.error || 'Failed to create order. Please try again.');
+        }
+
+        const options = {
+          key:         orderData.key_id,
+          amount:      orderData.amount,
+          currency:    'INR',
+          name:        'Coding for Civil Engineers',
+          description: 'OpenSTAAD Bootcamp for Everyone',
+          order_id:    orderData.order_id,
+          prefill:     { name: name, email: email, contact: phone },
+          notes:       { company: company },
+          theme:       { color: '#1D9E75' },
+          handler: async function (response) {
+            try {
+              await fetch('/api/payment-notify', {
+                method:  'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:    JSON.stringify({
+                  name:       name,
+                  email:      email,
+                  phone:      phone,
+                  company:    company,
+                  payment_id: response.razorpay_payment_id,
+                  order_id:   response.razorpay_order_id,
+                }),
+              });
+            } catch (_) {}
+            window.location.href = '/thank-you.html?name=' + encodeURIComponent(name);
+          },
+          modal: {
+            ondismiss: function () {
+              btn.textContent = 'Reserve My Seat — ₹12,000';
+              btn.disabled = false;
+            },
+          },
+        };
+
+        const rzp = new Razorpay(options);
+        rzp.open();
+
+      } catch (err) {
+        showError(err.message || 'Something went wrong. Please try again.');
+        btn.textContent = 'Reserve My Seat — ₹12,000';
+        btn.disabled = false;
+      }
+    });
+  </script>
+
+</body>
+</html>
