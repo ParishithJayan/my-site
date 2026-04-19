@@ -1,0 +1,49 @@
+# Coding for Civil Engineers (CfCE)
+
+> CfCE teaches practising structural engineers how to automate STAAD.Pro using the OpenSTAAD API and C#. The flagship programme is the **OpenSTAAD Bootcamp for Everyone** — a live, cohort-based bootcamp priced at ₹12,000, built for engineers with zero programming background. Founded and taught by Parishith Jayan, a practising structural engineer with production-grade OpenSTAAD automation experience.
+
+## About
+
+- **Brand:** Coding for Civil Engineers (CfCE)
+- **Founder & Instructor:** Parishith Jayan — practising structural engineer, OpenSTAAD automation specialist
+- **Tagline:** Automate STAAD. Reclaim your time.
+- **Hero statement:** Stop doing manually what STAAD can do for you.
+- **Website:** https://codingforcivilengineers.com
+- **Contact:** jparishith@gmail.com
+
+## Flagship Course: OpenSTAAD Bootcamp for Everyone
+
+- **Price:** ₹12,000 (INR), inclusive of applicable taxes
+- **Format:** Live cohort, 5 weeks, 10 sessions (2 sessions per week)
+- **Time commitment:** 3–5 hours per week
+- **Next cohort starts:** April 25, 2026
+- **Target student:** Practising structural engineers with zero programming background who know STAAD.Pro and want to automate repetitive work
+- **Prerequisites:** Working STAAD.Pro licence and installation; no prior coding knowledge required
+- **What students build:** Four working automation tools — a 2D PEB Frame Generator, an MTO Generation Tool, a Load Export Tool, and a custom tool of the student's choice in the final week
+- **Curriculum scope:** C# fundamentals taught in structural-engineering context, then the OpenSTAAD API for real automations (load combinations, member queries, result extraction, report generation)
+- **Payment:** Direct on-site via Razorpay
+- **Refund policy:** 7-day refund window from enrolment date, provided the first live session has not yet taken place
+
+## What Makes CfCE Different
+
+- Taught by a **practising structural engineer**, not a generic programming instructor
+- **Production-grade tools** demonstrated live — students replicate real automations used on actual engineering projects
+- Cohort format with accountability, not a self-paced video course
+- Curriculum specifically built for the structural engineering workflow — no generic CS theory
+
+## Key Pages
+
+- [Home](https://codingforcivilengineers.com/): Overview, hero, testimonials, FAQ, contact
+- [Enroll](https://codingforcivilengineers.com/enroll): Enrolment page with payment, cohort details, rotating testimonials
+- [Curriculum](https://codingforcivilengineers.com/curriculum): Full week-by-week curriculum breakdown
+- [Privacy Policy](https://codingforcivilengineers.com/privacy-policy)
+- [Terms & Conditions](https://codingforcivilengineers.com/terms-and-conditions)
+- [Refund Policy](https://codingforcivilengineers.com/refund-policy)
+
+## Audience
+
+Working structural engineers from Junior Engineer to Head of Engineering — typically at consultancies, EPC firms, or PEB companies — who use STAAD.Pro daily and want to reclaim time from repetitive tasks like load combination generation, member force extraction, MTO generation, and report creation.
+
+## Future Direction
+
+CfCE is expanding from one cohort-based course into a platform with multiple courses and corporate-level structural engineering automation training.

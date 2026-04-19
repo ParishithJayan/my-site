@@ -1,0 +1,32 @@
+# Coding for Civil Engineers — robots.txt
+# We welcome search engines and AI/LLM crawlers.
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /thank-you
+Disallow: /logos-showcase
+
+# Explicit allow for major LLM crawlers (redundant with * but signals intent)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://codingforcivilengineers.com/sitemap.xml
