@@ -16,27 +16,18 @@
 
     /* ── Enroll Nav ── */
     .enroll-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 200;
+      background: var(--primary);
       padding: 14px 0;
-      background: transparent;
-      transition: padding var(--t) var(--ease);
     }
     .enroll-nav-inner {
       display: grid;
       grid-template-columns: 1fr auto;
       align-items: center;
       height: 52px;
-      background: rgba(30, 45, 64, 0.6);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 100px;
       padding: 0 10px 0 20px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06);
     }
     .btn-back {
       display: inline-flex;
@@ -59,7 +50,7 @@
     /* ── Page hero ── */
     .enroll-hero {
       background: var(--surface);
-      padding: 120px 0 56px;
+      padding: 48px 0 56px;
       text-align: center;
       border-bottom: 1px solid rgba(30,45,64,0.08);
     }
@@ -634,6 +625,18 @@
           },
           modal: {
             ondismiss: function () {
+              fetch('/api/payment-notify', {
+                method:  'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body:    JSON.stringify({
+                  name:     name,
+                  email:    email,
+                  phone:    phone,
+                  company:  company,
+                  order_id: orderData.order_id,
+                  status:   'cancelled',
+                }),
+              }).catch(function() {});
               btn.textContent = 'Reserve My Seat — ₹12,000';
               btn.disabled = false;
             },
