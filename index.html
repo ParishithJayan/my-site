@@ -27,7 +27,6 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#course">Course</a></li>
-        <li><a href="curriculum.html">Curriculum</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -44,7 +43,6 @@
     <ul>
       <li><a href="#about" class="mob-link">About</a></li>
       <li><a href="#course" class="mob-link">Course</a></li>
-      <li><a href="curriculum.html" class="mob-link">Curriculum</a></li>
       <li><a href="#testimonials" class="mob-link">Testimonials</a></li>
       <li><a href="#faq" class="mob-link">FAQ</a></li>
       <li><a href="#contact" class="mob-link">Contact</a></li>
@@ -126,18 +124,15 @@
         </div>
         <div class="hero-ctas reveal-hero">
           <a href="#course" class="btn-primary">Join the Bootcamp — ₹12,000</a>
-          <a href="curriculum.html" class="btn-ghost">See What You Will Build</a>
+          <a href="#curriculum" class="btn-ghost">See What You Will Build</a>
         </div>
       </div>
 
     </div>
-    <div class="hero-scroll-line"></div>
-  </section>
 
-  <!-- ═══ STATS BAR ═══ -->
-  <div class="stats-bar">
-    <div class="container stats-inner">
-      <div class="stat">
+    <!-- Hero stats cards -->
+    <div class="container hero-stats">
+      <div class="hero-stat-card">
         <div class="stat-row">
           <span class="stat-big">2 hrs</span>
           <span class="stat-arrow">→</span>
@@ -145,23 +140,26 @@
         </div>
         <span class="stat-label">Task runtime after automation</span>
       </div>
-      <div class="stat-rule"></div>
-      <div class="stat">
+      <div class="hero-stat-card">
         <span class="stat-big">Zero</span>
         <span class="stat-label">coding background required</span>
       </div>
-      <div class="stat-rule"></div>
-      <div class="stat">
+      <div class="hero-stat-card">
         <span class="stat-big">₹12,000</span>
         <span class="stat-label">Complete bootcamp, all included</span>
       </div>
-      <div class="stat-rule"></div>
-      <div class="stat">
-        <span class="stat-big">5 ★</span>
+      <div class="hero-stat-card">
+        <span class="stat-big">4.8 ★</span>
         <span class="stat-label">Average student rating</span>
       </div>
+      <div class="hero-stat-card">
+        <span class="stat-big accent">56+</span>
+        <span class="stat-label">Engineers trained</span>
+      </div>
     </div>
-  </div>
+
+    <div class="hero-scroll-line"></div>
+  </section>
 
   <!-- ═══ TRANSFORMATION ═══ -->
   <section class="section transformation" id="transformation">
@@ -242,6 +240,134 @@
     </div>
   </section>
 
+  <!-- ═══ WHY NOT FREE ═══ -->
+  <section class="section whynot" id="whynot">
+    <div class="container">
+
+      <div class="section-hd reveal">
+        <span class="eyebrow">The Real Question</span>
+        <h2>Is it not possible to learn<br>the same from <em>free resources?</em></h2>
+        <p class="section-sub">You can. Here is exactly what that looks like.</p>
+      </div>
+
+      <div class="whynot-grid">
+
+        <!-- ── FREE ROAD ── -->
+        <div class="road reveal">
+          <div class="road-label road-label-free">
+            <span class="road-badge road-badge-free">The Free Path</span>
+            <span class="road-meta">6–12 months · scattered effort</span>
+          </div>
+
+          <div class="road-step road-step-l">
+            <div class="road-node road-node-free">1</div>
+            <div class="road-card road-card-free">
+              <p class="road-title">Search "OpenSTAAD tutorial" on YouTube</p>
+              <p class="road-desc">Find three videos. One is from 2014. One has no audio. One shows a macro in VBA, not C#. None explain why the code works — just copy this and run it.</p>
+            </div>
+          </div>
+
+          <div class="road-step road-step-r">
+            <div class="road-card road-card-free">
+              <p class="road-title">Using the OpenSTAAD documentation from Bentley</p>
+              <p class="road-desc">Numerous pages. No roadmap. Only function explanations — no examples matching your project. Spend a weekend finding the right combination of methods.</p>
+            </div>
+            <div class="road-node road-node-free">2</div>
+          </div>
+
+          <div class="road-step road-step-l">
+            <div class="road-node road-node-free">3</div>
+            <div class="road-card road-card-free">
+              <p class="road-title">Post a question on a forum</p>
+              <p class="road-desc">Wait four days. Get one reply. Correct the code. Another bug — the cycle repeats.</p>
+            </div>
+          </div>
+
+          <div class="road-step road-step-r">
+            <div class="road-card road-card-free">
+              <p class="road-title">Ask AI</p>
+              <p class="road-desc">Trust me — GPT or Claude works on context. For the OpenSTAAD API, it does not have much. Without that, it is like hitting a wall.</p>
+            </div>
+            <div class="road-node road-node-free">4</div>
+          </div>
+
+          <div class="road-step road-step-l road-step-last">
+            <div class="road-node road-node-free road-node-end">5</div>
+            <div class="road-card road-card-free">
+              <p class="road-title">Give up — or accept the ceiling</p>
+              <p class="road-desc">Most engineers stop here. Not because they are not smart enough. Because there is no clear path forward and no one to ask.</p>
+            </div>
+          </div>
+
+          <div class="road-result road-result-free">
+            <span class="road-result-label">6–12 months later</span>
+            <p>Some working script. Zero structured knowledge. High chance of abandoning it entirely.</p>
+          </div>
+        </div>
+
+        <!-- ── COURSE ROAD ── -->
+        <div class="road reveal">
+          <div class="road-label road-label-course">
+            <span class="road-badge road-badge-course">The Course Path</span>
+            <span class="road-meta">5 weeks · structured sessions</span>
+          </div>
+
+          <div class="road-step road-step-l">
+            <div class="road-node road-node-course">1</div>
+            <div class="road-card road-card-course">
+              <p class="road-title">Week 1 — You write real C# on Day 1</p>
+              <p class="road-desc">No setup confusion. Guided walkthrough, first program, every line explained. By Session 2 you are writing loops and conditions on real engineering problems.</p>
+            </div>
+          </div>
+
+          <div class="road-step road-step-r">
+            <div class="road-card road-card-course">
+              <p class="road-title">Week 2 — You build your first automation tool</p>
+              <p class="road-desc">Not a toy example. A 2D PEB Frame Generator that creates a STAAD model from code — taught in a structural engineering context, not computer science.</p>
+            </div>
+            <div class="road-node road-node-course">2</div>
+          </div>
+
+          <div class="road-step road-step-l">
+            <div class="road-node road-node-course">3</div>
+            <div class="road-card road-card-course">
+              <p class="road-title">Week 3 — You connect to STAAD and control it</p>
+              <p class="road-desc">OpenSTAAD API demystified in one session. COM, C#, initialisation — all clear. Session 6 ends with a working MTO Generation Tool you built yourself.</p>
+            </div>
+          </div>
+
+          <div class="road-step road-step-r">
+            <div class="road-card road-card-course">
+              <p class="road-title">Week 4 — You extract results automatically</p>
+              <p class="road-desc">Member forces. Reactions. Load data. All pulled directly from STAAD into Excel without touching the GUI. You will never manually copy a result again.</p>
+            </div>
+            <div class="road-node road-node-course">4</div>
+          </div>
+
+          <div class="road-step road-step-l road-step-last">
+            <div class="road-node road-node-course road-node-end">5</div>
+            <div class="road-card road-card-course">
+              <p class="road-title">Week 5 — You ship a complete, production-ready tool</p>
+              <p class="road-desc">Real problem from your own work. Build the UI, integrate everything, deliver a finished automation tool — something you own, understand, and can extend immediately.</p>
+            </div>
+          </div>
+
+          <div class="road-result road-result-course">
+            <span class="road-result-label">5 weeks later</span>
+            <p>Four working tools. Full C# and OpenSTAAD foundations. The ability to build anything you need next.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="whynot-footer reveal">
+        <p class="whynot-closing">The free path is not impossible. It is just expensive — in time, frustration, and the very real chance you quit before it clicks. Trust me — this course is what I wish had existed when I started.</p>
+        <a href="#course" class="btn-primary">Stop Searching. Start Building. — ₹12,000</a>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ═══ ABOUT ═══ -->
   <section class="section about" id="about">
     <div class="container about-inner">
@@ -300,7 +426,7 @@
 <span class="c-cmt">// Done. In seconds, not hours.</span></code></pre>
         </div>
         <div class="exp-card">
-          <span class="exp-num">5+</span>
+          <span class="exp-num">8+</span>
           <span class="exp-label">years of production<br>OpenSTAAD automation</span>
         </div>
       </div>
@@ -774,7 +900,7 @@
       <p>OpenSTAAD Bootcamp for Everyone is the clearest path from where you are now to where you want to be.
         <strong>₹12,000. No prior coding required. Real tools, real results.</strong></p>
       <div class="cta-btns">
-        <a href="#contact" class="btn-dark">Join the Bootcamp Now</a>
+        <a href="#course" class="btn-dark">Join the Bootcamp Now</a>
         <a href="#contact" class="btn-dark-ghost">Questions first? Let us talk.</a>
       </div>
     </div>
@@ -848,10 +974,10 @@
       setTimeout(() => el.classList.add('visible'), 100 + i * 140);
     });
 
-    // ── Nav shadow on scroll ──
+    // ── Nav: appear on scroll ──
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 24);
+      nav.classList.toggle('scrolled', window.scrollY > 80);
     }, { passive: true });
 
     // ── Hamburger ──
@@ -868,14 +994,41 @@
       });
     });
 
-    // ── Form submit ──
-    document.getElementById('contactForm').addEventListener('submit', (e) => {
+    // ── Form submit → Telegram ──
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
       e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      btn.textContent = 'Message sent — I will be in touch.';
+      const form = e.target;
+      const btn  = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending…';
       btn.disabled = true;
-      btn.style.background = '#14805e';
-      btn.style.boxShadow = 'none';
+
+      const body = {
+        name:     form.elements['name'].value.trim(),
+        email:    form.elements['email'].value.trim(),
+        message:  form.elements['message'].value.trim(),
+        automate: form.elements['automate'].value.trim(),
+      };
+
+      try {
+        const res  = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+        const data = await res.json();
+        if (data.success) {
+          btn.textContent = '✓ Message sent — I will be in touch.';
+          btn.style.background = '#14805e';
+          btn.style.boxShadow = 'none';
+          form.reset();
+        } else {
+          btn.textContent = 'Something went wrong. Please try again.';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = 'Something went wrong. Please try again.';
+        btn.disabled = false;
+      }
     });
 
     // ── FAQ accordion ──
