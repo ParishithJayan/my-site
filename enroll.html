@@ -30,17 +30,12 @@
       grid-template-columns: 1fr auto;
       align-items: center;
       height: 52px;
-      background: transparent;
-      border: 1px solid transparent;
-      border-radius: 100px;
-      padding: 0 10px 0 20px;
-      transition: box-shadow 0.35s var(--ease), border-color 0.35s var(--ease), background 0.35s var(--ease);
-    }
-    .enroll-nav.scrolled .enroll-nav-inner {
-      background: rgba(30, 45, 64, 0.55);
+      background: rgba(30, 45, 64, 0.6);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
-      border-color: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 100px;
+      padding: 0 10px 0 20px;
       box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.06);
     }
     .btn-back {
@@ -191,41 +186,22 @@
         no-repeat center;
     }
 
-    .build-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .build-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 11px;
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.72);
-      line-height: 1.5;
-    }
-    .build-num {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 22px;
-      height: 22px;
-      min-width: 22px;
-      border-radius: 50%;
-      background: rgba(29,158,117,0.18);
-      color: var(--accent);
-      font-size: 0.68rem;
-      font-weight: 800;
-      margin-top: 2px;
-    }
-
-    /* Testimonial */
+    /* Testimonial carousel */
+    .testi-carousel { position: relative; }
     .cohort-quote {
       background: rgba(255,255,255,0.04);
       border-left: 3px solid var(--accent);
       border-radius: 0 var(--r-sm) var(--r-sm) 0;
       padding: 16px 20px;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    .cohort-quote.testi-out {
+      opacity: 0;
+      transform: translateX(-14px);
+    }
+    .cohort-quote.testi-in {
+      opacity: 0;
+      transform: translateX(14px);
     }
     .cohort-quote p {
       font-size: 0.88rem;
@@ -233,6 +209,7 @@
       color: rgba(255,255,255,0.65);
       font-style: italic;
       margin-bottom: 12px;
+      min-height: 80px;
     }
     .cohort-quote-author {
       display: flex;
@@ -254,6 +231,24 @@
     .cohort-quote-author span {
       font-size: 0.7rem;
       color: rgba(255,255,255,0.4);
+    }
+    .testi-dots {
+      display: flex;
+      gap: 6px;
+      margin-top: 12px;
+      justify-content: center;
+    }
+    .testi-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.18);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .testi-dot.active {
+      background: var(--accent);
+      transform: scale(1.3);
     }
 
     /* ── Form card (right) ── */
@@ -400,42 +395,24 @@
           </div>
 
           <div class="cohort-section">
-            <span class="cohort-section-label">Tools you will build</span>
-            <ul class="build-list">
-              <li>
-                <span class="build-num">1</span>
-                <span><strong style="color:var(--white);display:inline;">2D PEB Frame Generator</strong> — creates STAAD models from code</span>
-              </li>
-              <li>
-                <span class="build-num">2</span>
-                <span><strong style="color:var(--white);display:inline;">MTO Generation Tool</strong> — extracts material take-off directly from STAAD</span>
-              </li>
-              <li>
-                <span class="build-num">3</span>
-                <span><strong style="color:var(--white);display:inline;">Load Export Tool</strong> — pulls loads and reactions to Excel automatically</span>
-              </li>
-              <li>
-                <span class="build-num">4</span>
-                <span><strong style="color:var(--white);display:inline;">Your Complete Automation Tool</strong> — production-ready, yours to keep</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="cohort-section">
             <span class="cohort-section-label">Who this is for</span>
             <p style="font-size:0.9rem;color:rgba(255,255,255,0.68);line-height:1.68;">Practising structural engineers using STAAD on live projects. Zero programming background required. If you know STAAD, you have everything you need to start.</p>
           </div>
 
           <div class="cohort-section">
-            <div class="cohort-quote">
-              <p>"The course was well structured, engaging and extremely informative. It was definitely worth both the time and investment. The most unique aspect was the combination of real-life examples and interactive sessions."</p>
-              <div class="cohort-quote-author">
-                <div class="avatar">SG</div>
-                <div>
-                  <strong>Sanjaya Kumar Gouda</strong>
-                  <span>Senior Structural Engineer · Roofings Middle East</span>
+            <span class="cohort-section-label">What engineers say</span>
+            <div class="testi-carousel">
+              <div class="cohort-quote" id="testiQuote">
+                <p id="testiText"></p>
+                <div class="cohort-quote-author">
+                  <div class="avatar" id="testiAvatar"></div>
+                  <div>
+                    <strong id="testiName"></strong>
+                    <span id="testiRole"></span>
+                  </div>
                 </div>
               </div>
+              <div class="testi-dots" id="testiDots"></div>
             </div>
           </div>
 
@@ -493,11 +470,94 @@
   </main>
 
   <script>
-    // Floating pill nav
-    const enrollNav = document.getElementById('enrollNav');
-    window.addEventListener('scroll', () => {
-      enrollNav.classList.toggle('scrolled', window.scrollY > 60);
-    }, { passive: true });
+    // ── Testimonial carousel ──
+    const testimonials = [
+      {
+        initials: 'AP',
+        quote: 'It was a very helpful course. Even though I am a novice coder, by the end I could code and create automation tools. Parishith explained all the concepts thoroughly and cleared doubts patiently. Highly recommend.',
+        name: 'Ankita Patel',
+        role: 'Structural Engineer & Project Manager · M.P.Prime Structures',
+      },
+      {
+        initials: 'SG',
+        quote: 'The course was well structured, engaging and extremely informative. It was definitely worth both the time and investment. The most unique aspect was the combination of real-life examples and interactive sessions.',
+        name: 'Sanjaya Kumar Gouda',
+        role: 'Senior Structural Engineer · Roofings Middle East',
+      },
+      {
+        initials: 'SP',
+        quote: 'A great experience that was incredibly informative and efficient. Parishith was an outstanding teacher who made learning engaging, helping me absorb a ton in a short period of time. 5/5 — truly inspiring.',
+        name: 'Saad Patel',
+        role: 'Senior Engineer · Tecnimont',
+      },
+      {
+        initials: 'SK',
+        quote: 'Overall experience was amazing. The cohort session was very helpful and full paisa wasool. Specifically designed for the structural engineering domain — Parishith has really tried to give his best.',
+        name: 'Shishir S. Kadam',
+        role: 'Engineering Manager · Tata Consulting Engineers (TCE)',
+      },
+      {
+        initials: 'VR',
+        quote: 'The course was really helpful and interesting, providing tremendous insight for the use of programming and automation in our field. It will definitely improve our working style and save a lot of valuable time.',
+        name: 'Varun Raj',
+        role: 'Senior Structural Design Engineer · SKYNR Engineering',
+      },
+    ];
+
+    var testiIdx = 0;
+    var testiTimer;
+
+    var quoteEl  = document.getElementById('testiQuote');
+    var textEl   = document.getElementById('testiText');
+    var avatarEl = document.getElementById('testiAvatar');
+    var nameEl   = document.getElementById('testiName');
+    var roleEl   = document.getElementById('testiRole');
+    var dotsEl   = document.getElementById('testiDots');
+
+    // Build dots
+    testimonials.forEach(function(_, i) {
+      var d = document.createElement('span');
+      d.className = 'testi-dot' + (i === 0 ? ' active' : '');
+      d.addEventListener('click', function() { goTo(i); });
+      dotsEl.appendChild(d);
+    });
+
+    function setDot(i) {
+      dotsEl.querySelectorAll('.testi-dot').forEach(function(d, idx) {
+        d.classList.toggle('active', idx === i);
+      });
+    }
+
+    function renderSlide(i) {
+      var t = testimonials[i];
+      textEl.textContent   = '\u201c' + t.quote + '\u201d';
+      avatarEl.textContent = t.initials;
+      nameEl.textContent   = t.name;
+      roleEl.textContent   = t.role;
+      setDot(i);
+    }
+
+    function goTo(next) {
+      clearInterval(testiTimer);
+      quoteEl.classList.add('testi-out');
+      setTimeout(function() {
+        testiIdx = next;
+        renderSlide(testiIdx);
+        quoteEl.classList.remove('testi-out');
+        quoteEl.classList.add('testi-in');
+        // Force reflow
+        void quoteEl.offsetWidth;
+        quoteEl.classList.remove('testi-in');
+        testiTimer = setInterval(advance, 10000);
+      }, 380);
+    }
+
+    function advance() {
+      goTo((testiIdx + 1) % testimonials.length);
+    }
+
+    renderSlide(0);
+    testiTimer = setInterval(advance, 10000);
   </script>
 
   <script>
