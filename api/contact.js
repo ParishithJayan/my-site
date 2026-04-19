@@ -12,7 +12,7 @@ module.exports = async function contactHandler(req, res) {
   }
 
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
-  const chatId   = process.env.TELEGRAM_CHAT_ID;
+  const chatId   = process.env.TELEGRAM_USER_ID;
 
   if (!botToken || !chatId) {
     return res.status(500).json({ error: 'Telegram not configured.' });
