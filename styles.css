@@ -1677,10 +1677,12 @@ p { line-height: 1.78; }
   .hamburger { display: flex; }
 
   /* Hero */
-  .hero { padding: 60px 0 80px; min-height: auto; }
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-  .hero-visual { order: -1; }
-  .staad-card { max-width: 100%; }
+  .hero { padding: 90px 0 80px; min-height: auto; }
+  .hero-inner { grid-template-columns: 1fr; gap: 36px; }
+  .hero-visual { order: 2; max-height: 340px; overflow: hidden; }
+  .editor-card { max-height: 340px; }
+  .term-code-pane { max-height: 120px; }
+  .term-console { min-height: 100px; }
   .hero-ctas { flex-direction: column; align-items: stretch; }
   .hero-ctas .btn-primary,
   .hero-ctas .btn-ghost { width: 100%; justify-content: center; }
