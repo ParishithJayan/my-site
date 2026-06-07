@@ -16,7 +16,7 @@
   var CFG = {
     totalSeats: 20,      // total seats in this cohort
     earlySeats: 10,      // first N seats at the early price
-    seatsFilled: 4,       // seats already paid for — bump +1 per payment
+    seatsFilled: 5,       // seats already paid for — bump +1 per payment
     earlyPrice: 12000,   // ₹ for the first `earlySeats` seats
     regularPrice: 15000    // ₹ for the remaining seats
   };
