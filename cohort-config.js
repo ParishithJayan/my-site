@@ -17,8 +17,8 @@
     totalSeats: 20,      // total seats in this cohort
     earlySeats: 10,      // first N seats at the early price
     seatsFilled: 0,       // seats already paid for — bump +1 per payment
-    earlyPrice: 1,   // ₹ for the first `earlySeats` seats
-    regularPrice: 10    // ₹ for the remaining seats
+    earlyPrice: 12000,   // ₹ for the first `earlySeats` seats
+    regularPrice: 15000    // ₹ for the remaining seats
   };
 
   // Price the NEXT registrant pays, based on how many seats are filled.
