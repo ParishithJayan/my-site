@@ -5,7 +5,8 @@ module.exports = async function paymentNotifyHandler(req, res) {
     return res.status(405).json({ error: 'Method not allowed.' });
   }
 
-  const { name, email, phone, company, payment_id, order_id, status } = req.body;
+  const { name, email, phone, company, payment_id, order_id, status, amount } = req.body;
+  const amountStr = amount ? (amount / 100).toLocaleString('en-IN') : '12,000';
 
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
   const chatId   = process.env.TELEGRAM_USER_ID;
@@ -38,7 +39,7 @@ module.exports = async function paymentNotifyHandler(req, res) {
         ``,
         `💳 *Payment ID:* \`${payment_id}\``,
         `📦 *Order ID:* \`${order_id}\``,
-        `💰 *Amount Paid:* ₹12,000`,
+        `💰 *Amount Paid:* ₹${amountStr}`,
       ];
 
   const text = lines.filter(l => l !== null).join('\n');

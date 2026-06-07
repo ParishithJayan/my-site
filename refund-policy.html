@@ -110,8 +110,8 @@
   <div class="announce-bar">
     <a href="/enroll">
       <span class="announce-pulse"></span>
-      <span class="announce-text">Next cohort begins April 25, 2026 · Limited seats</span>
-      <span class="announce-text-short">Next cohort · Apr 25, 2026</span>
+      <span class="announce-text">Cohort starts June 22 · 9–11 PM IST · <span data-price-early>₹12,000</span> for the first 10 seats, then <span data-price-regular>₹15,000</span> · <span data-seat-filled>0</span>/<span data-seat-total>20</span> filled</span>
+      <span class="announce-text-short">June 22 · 9–11 PM IST · <span data-price-early>₹12,000</span> first 10 · <span data-seat-filled>0</span>/<span data-seat-total>20</span></span>
       <span class="announce-cta">Reserve your spot →</span>
     </a>
   </div>
@@ -138,7 +138,7 @@
       <li><a href="index.html#about" class="mob-link">About</a></li>
       <li><a href="index.html#course" class="mob-link">Course</a></li>
       <li><a href="index.html#contact" class="mob-link">Contact</a></li>
-      <li><a href="index.html#course" class="btn-primary mob-link">Join Bootcamp — ₹12,000</a></li>
+      <li><a href="index.html#course" class="btn-primary mob-link">Join Bootcamp — <span data-price-current>₹12,000</span></a></li>
     </ul>
   </div>
 
@@ -159,6 +159,10 @@
         <p>We offer a 7-day refund window from the date of enrolment, provided course access has not yet commenced. Once the first live session has taken place, refunds are not available.</p>
       </div>
 
+      <div class="refund-highlight">
+        <p><strong>Build-It-or-It's-Free Guarantee.</strong> Separate from the 7-day window: if you attend the live sessions, complete the exercises, and still cannot build a working OpenSTAAD automation by the end of the cohort, you are entitled to a full refund. See Section 2 below.</p>
+      </div>
+
       <h2>1. Nature of the Service</h2>
       <p>Coding for Civil Engineers (CfCE) offers live, cohort-based online courses. Our current programme, the <strong>OpenSTAAD Bootcamp for Everyone</strong>, is a fully digital service comprising live sessions, session recordings, and digital course materials.</p>
       <p>Because our courses involve a fixed cohort schedule, instructor preparation, and limited seats, our refund policy reflects the commitments made on both sides when you enrol.</p>
@@ -169,13 +173,14 @@
         <li>You request a refund within <strong>7 calendar days</strong> of your enrolment date, <strong>and</strong></li>
         <li>The first live session of your cohort has not yet taken place.</li>
       </ul>
-      <p>Refund requests made after the first live session has commenced will not be entertained, regardless of attendance.</p>
+      <p>Refund requests made after the first live session has commenced will not be entertained under this 7-day window — except where the Build-It-or-It's-Free Guarantee below applies.</p>
+      <p><strong>Build-It-or-It's-Free Guarantee.</strong> In addition to the window above, you are eligible for a full refund if you (a) attend the live sessions, (b) complete the exercises set during the cohort, and (c) are still unable to build a working OpenSTAAD automation by the end of the cohort. Refund requests under this guarantee must be made within 7 days of the final session.</p>
 
       <h2>3. No Refund Situations</h2>
       <p>Refunds will not be issued in the following cases:</p>
       <ul>
         <li>The 7-day refund window has passed.</li>
-        <li>The first live session has already taken place.</li>
+        <li>The first live session has already taken place (unless you qualify under the Build-It-or-It's-Free Guarantee).</li>
         <li>You are unable to attend sessions due to personal schedule conflicts, technical issues on your end, or work commitments.</li>
         <li>You have accessed session recordings or course materials.</li>
         <li>You change your mind after the refund window has closed.</li>
@@ -245,5 +250,7 @@
     });
   </script>
 
+  <script src="/cohort-config.js"></script>
+  <script src="/seats.js"></script>
 </body>
 </html>

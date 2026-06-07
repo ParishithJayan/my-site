@@ -1,4 +1,5 @@
 const Razorpay = require('razorpay');
+const COHORT = require('../cohort-config.js');
 
 module.exports = async function createOrderHandler(req, res) {
   if (req.method !== 'POST') {
@@ -18,7 +19,7 @@ module.exports = async function createOrderHandler(req, res) {
 
   try {
     const order = await instance.orders.create({
-      amount:   1200000, // ₹12,000 in paise
+      amount:   COHORT.currentPrice() * 100, // INR → paise, from cohort-config.js
       currency: 'INR',
       receipt:  'cfce_' + Date.now(),
       notes: {
