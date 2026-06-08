@@ -6,24 +6,27 @@
      • the seat counter in the top bar and enroll page
      • the actual Razorpay charge (api/create-order.js reads this)
 
-   Pricing model: the first `earlySeats` seats pay `earlyPrice`,
-   the remaining seats pay `regularPrice`.
+   Pricing model: register on or before `earlyUntil` (IST) and you
+   pay `earlyPrice`. From the next day onward it is `regularPrice`.
 
    seatsFilled: bump this by 1 each time someone pays.
    (You get a payment alert on every registration, so just +1.)
+   It only drives the seat counter — it no longer affects price.
    ─────────────────────────────────────────────────────────── */
 (function (root) {
   var CFG = {
-    totalSeats: 20,      // total seats in this cohort
-    earlySeats: 10,      // first N seats at the early price
-    seatsFilled: 5,       // seats already paid for — bump +1 per payment
-    earlyPrice: 12000,   // ₹ for the first `earlySeats` seats
-    regularPrice: 15000    // ₹ for the remaining seats
+    totalSeats: 20,            // total seats in this cohort
+    seatsFilled: 5,            // seats already paid for — bump +1 per payment
+    earlyPrice: 12000,         // ₹ for registrations on or before earlyUntil
+    regularPrice: 15000,       // ₹ from the day after earlyUntil
+    earlyUntil: '2026-06-15'   // last day (IST) to get earlyPrice; YYYY-MM-DD
   };
 
-  // Price the NEXT registrant pays, based on how many seats are filled.
+  // Price the NEXT registrant pays, based on today's date (IST).
+  // Early price holds through the end of `earlyUntil`; regular price after.
   CFG.currentPrice = function () {
-    return CFG.seatsFilled < CFG.earlySeats ? CFG.earlyPrice : CFG.regularPrice;
+    var endOfEarly = new Date(CFG.earlyUntil + 'T23:59:59+05:30');
+    return new Date() <= endOfEarly ? CFG.earlyPrice : CFG.regularPrice;
   };
 
   if (typeof module !== 'undefined' && module.exports) {
