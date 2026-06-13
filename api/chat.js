@@ -30,7 +30,7 @@ Sessions 1 & 2: Setup + Visual Studio; Variables, Loops & Conditions.
 Sessions 3 & 4: OOP Concepts; File Handling + Mini Project (2D Frame Generator).
 Sessions 5 & 6: Introduction to OpenSTAAD; API Workflow + Mini Project (MTO Tool).
 Sessions 7 & 8: Supports & Loads; Extracting Results + Mini Project (Load Export Tool).
-Sessions 9 & 10: STAAD MCP Servers; Using AI to write OpenSTAAD functions.
+Sessions 9 & 10: Drawing Automation (create a real structural drawing from C# code); AI + STAAD MCP Server (set up an MCP server and let AI write OpenSTAAD functions for you).
 
 SCHEDULE: Live Monday to Friday over two weeks, 22 June to 3 July 2026, 9:00 to 11:00 PM IST, 2 hours a day. The evening slot lets working engineers attend after the workday. Three real tools are built in Sessions 4, 6 and 8 (2D PEB Frame Generator, MTO Generation Tool, Load Export Tool).
 
