@@ -28,7 +28,7 @@
     regularPrice: 15000,       // ₹ from the day after earlyUntil
     earlyUntil: '2026-06-15',  // last day (IST) to get earlyPrice; YYYY-MM-DD
 
-    enrollOpen: false,          // false = registration closed, see note above
+    enrollOpen: true,          // false = registration closed, see note above
 
     // Shown in the top bar (and used as the redirect target) only when enrollOpen is false.
     closedNotice: {
