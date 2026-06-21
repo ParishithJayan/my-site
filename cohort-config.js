@@ -12,6 +12,13 @@
    seatsFilled: bump this by 1 each time someone pays.
    (You get a payment alert on every registration, so just +1.)
    It only drives the seat counter — it no longer affects price.
+
+   CLOSING REGISTRATION FOR THIS COHORT:
+   Set `enrollOpen` to false. The whole site reacts automatically —
+   the top bar swaps to the `closedNotice` text below, "Reserve your
+   spot" and every other enroll.html link site-wide redirect to
+   registration-closed.html, and enroll.html itself bounces anyone
+   who lands there directly. Flip it back to true to reopen.
    ─────────────────────────────────────────────────────────── */
 (function (root) {
   var CFG = {
@@ -19,7 +26,17 @@
     seatsFilled: 12,            // seats already paid for — bump +1 per payment
     earlyPrice: 12000,         // ₹ for registrations on or before earlyUntil
     regularPrice: 15000,       // ₹ from the day after earlyUntil
-    earlyUntil: '2026-06-15'   // last day (IST) to get earlyPrice; YYYY-MM-DD
+    earlyUntil: '2026-06-15',  // last day (IST) to get earlyPrice; YYYY-MM-DD
+
+    enrollOpen: true,          // false = registration closed, see note above
+
+    // Shown in the top bar (and used as the redirect target) only when enrollOpen is false.
+    closedNotice: {
+      bannerText: 'Next cohort is underway — registrations are closed for now.',
+      bannerShort: 'Registrations closed for now.',
+      bannerCta: 'Get notified →',
+      redirectTo: 'registration-closed.html'
+    }
   };
 
   // Price the NEXT registrant pays, based on today's date (IST).

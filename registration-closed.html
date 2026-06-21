@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrations Closed — Coding for Civil Engineers</title>
+  <meta name="description" content="Registrations for the current OpenSTAAD Bootcamp cohort are closed. Leave your email and phone number to be notified when the next cohort opens.">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://codingforcivilengineers.com/registration-closed">
+  <meta property="og:title" content="Registrations Closed — Coding for Civil Engineers">
+  <meta property="og:description" content="The current cohort is closed for new registrations. Leave your details to be notified when the next one opens.">
+  <meta property="og:image" content="https://codingforcivilengineers.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Coding for Civil Engineers">
+  <meta property="og:locale" content="en_US">
+
+  <link rel="canonical" href="https://codingforcivilengineers.com/registration-closed">
+  <link rel="icon" type="image/svg+xml" href="cfce-logo.svg">
+  <script defer src="/_vercel/insights/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .closed-hero {
+      background: var(--primary);
+      padding: 120px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .closed-hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(29,158,117,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(29,158,117,0.06) 1px, transparent 1px);
+      background-size: 52px 52px;
+    }
+    .closed-hero-inner { position: relative; z-index: 1; max-width: 660px; }
+    .closed-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: rgba(250, 199, 117, 0.14);
+      border: 2px solid rgba(250, 199, 117, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+    .closed-hero h1 {
+      color: var(--white);
+      font-size: clamp(2rem, 3.4vw, 3rem);
+      margin-bottom: 16px;
+    }
+    .closed-hero p {
+      color: rgba(255,255,255,0.62);
+      font-size: 1.02rem;
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    .notify-section { background: var(--ink); padding: 64px 0 80px; }
+    .notify-inner { max-width: 560px; margin: 0 auto; }
+    .notify-inner h2 { color: var(--white); margin-bottom: 10px; }
+    .notify-inner > p { color: rgba(255,255,255,0.55); margin-bottom: 28px; }
+    .notify-form { display: flex; flex-direction: column; gap: 20px; }
+
+    .notify-success {
+      display: none;
+      background: rgba(29,158,117,0.12);
+      border: 1px solid rgba(29,158,117,0.35);
+      border-radius: var(--r-sm);
+      padding: 16px 18px;
+      color: var(--white);
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="announce-bar">
+    <a href="/enroll">
+      <span class="announce-pulse"></span>
+      <span class="announce-text">Cohort starts June 22 · 9–11 PM IST · <span data-price-current>₹15,000</span> · <span data-seat-filled>0</span>/<span data-seat-total>20</span> filled</span>
+      <span class="announce-text-short">June 22 · 9–11 PM IST · <span data-price-current>₹15,000</span> · <span data-seat-filled>0</span>/<span data-seat-total>20</span></span>
+      <span class="announce-cta">Reserve your spot →</span>
+    </a>
+  </div>
+
+  <nav class="nav scrolled" id="nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <img src="cfce-logo.svg" alt="Coding for Civil Engineers" class="logo-img">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#course">Course</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#course" class="btn-nav">Back to Home</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#about" class="mob-link">About</a></li>
+      <li><a href="index.html#course" class="mob-link">Course</a></li>
+      <li><a href="index.html#contact" class="mob-link">Contact</a></li>
+      <li><a href="index.html" class="btn-primary mob-link">Back to Home</a></li>
+    </ul>
+  </div>
+
+  <section class="closed-hero">
+    <div class="closed-hero-grid"></div>
+    <div class="container closed-hero-inner">
+      <div class="closed-icon">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="10.5" stroke="#FAC775" stroke-width="2"/>
+          <path d="M14 8.5V14L17.5 17" stroke="#FAC775" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <span class="eyebrow">Registrations Closed</span>
+      <h1>The Current Cohort Is Now Underway</h1>
+      <p>We have just closed registrations for this batch of the OpenSTAAD Bootcamp. No new enrolments are being taken while this cohort runs.</p>
+      <p>The next cohort is being planned. Leave your email and phone number below and you will be the first to hear when seats open again.</p>
+    </div>
+  </section>
+
+  <section class="notify-section">
+    <div class="container notify-inner">
+      <h2>Get Notified for the Next Cohort</h2>
+      <p>One message when registrations reopen. No spam, no sales drip.</p>
+
+      <div class="notify-success" id="notifySuccess">
+        ✓ Got it — I will reach out as soon as the next cohort opens.
+      </div>
+
+      <form class="notify-form" id="notifyForm" novalidate>
+        <div class="form-row">
+          <label for="nname">Name</label>
+          <input type="text" id="nname" name="name" placeholder="Your name" required>
+        </div>
+        <div class="form-row">
+          <label for="nemail">Email</label>
+          <input type="email" id="nemail" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-row">
+          <label for="nphone">Phone / WhatsApp</label>
+          <input type="tel" id="nphone" name="phone" placeholder="+91 90000 00000" required>
+        </div>
+        <div class="form-row">
+          <label for="nmessage">Anything you would like to share <span class="opt">(optional)</span></label>
+          <textarea id="nmessage" name="message" rows="3" placeholder="e.g. what you want to automate, or when you'd like the next cohort to start"></textarea>
+        </div>
+        <button type="submit" class="btn-primary btn-submit">Notify Me When Seats Open</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="cfce-logo.svg" alt="Coding for Civil Engineers" class="logo-img logo-img-footer">
+        <span class="footer-tag">Automate STAAD. Reclaim your time.</span>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html#about">About</a>
+        <a href="index.html#course">Course</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-and-conditions.html">Terms</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </nav>
+      <p class="footer-copy">© 2025 Coding for Civil Engineers · codingforcivilengineers.com</p>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+    document.querySelectorAll('.mob-link').forEach(l => {
+      l.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', false);
+      });
+    });
+
+    // ── Form submit → Telegram + Email ──
+    document.getElementById('notifyForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const btn  = form.querySelector('button[type="submit"]');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      const body = {
+        name:    form.elements['name'].value.trim(),
+        email:   form.elements['email'].value.trim(),
+        phone:   form.elements['phone'].value.trim(),
+        message: form.elements['message'].value.trim(),
+        source:  'waitlist',
+      };
+
+      try {
+        const res  = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+        const data = await res.json();
+        if (data.success) {
+          form.style.display = 'none';
+          document.getElementById('notifySuccess').style.display = 'block';
+        } else {
+          btn.textContent = data.error || 'Something went wrong. Please try again.';
+          btn.disabled = false;
+        }
+      } catch (err) {
+        btn.textContent = 'Network error: ' + err.message;
+        btn.disabled = false;
+      }
+    });
+  </script>
+
+  <script src="/cohort-config.js"></script>
+  <script src="/seats.js"></script>
+</body>
+</html>

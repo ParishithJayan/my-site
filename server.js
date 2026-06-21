@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname)));
 
 // Clean URL routes — serve pages without .html extension
-const pages = ['enroll', 'thank-you', 'curriculum', 'privacy-policy', 'terms-and-conditions', 'refund-policy'];
+const pages = ['enroll', 'thank-you', 'curriculum', 'privacy-policy', 'terms-and-conditions', 'refund-policy', 'registration-closed'];
 pages.forEach(page => {
   app.get(`/${page}`, (req, res) => res.sendFile(path.join(__dirname, `${page}.html`)));
 });

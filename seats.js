@@ -25,6 +25,33 @@
     document.querySelectorAll(sel).forEach(function (el) { el.textContent = val; });
   }
 
+  // When enrollOpen is false: swap the top bar to the closed-cohort message
+  // and send every link that points at enroll.html to the waitlist page instead.
+  // No-op (and untouched) whenever enrollOpen is true.
+  var ENROLL_LINK = /^\/?enroll(\.html)?(?:[?#].*)?$/i;
+
+  function applyClosedState() {
+    if (cfg.enrollOpen !== false) return;
+    var notice = cfg.closedNotice || {};
+    var target = notice.redirectTo || 'registration-closed.html';
+
+    document.querySelectorAll('.announce-bar').forEach(function (bar) {
+      var link = bar.querySelector('a');
+      if (link) link.setAttribute('href', target);
+      var full = bar.querySelector('.announce-text');
+      var short = bar.querySelector('.announce-text-short');
+      var cta = bar.querySelector('.announce-cta');
+      if (full && notice.bannerText) full.textContent = notice.bannerText;
+      if (short && notice.bannerShort) short.textContent = notice.bannerShort;
+      if (cta && notice.bannerCta) cta.textContent = notice.bannerCta;
+    });
+
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      if (href && ENROLL_LINK.test(href)) a.setAttribute('href', target);
+    });
+  }
+
   function apply() {
     setText('[data-seat-filled]', filled);
     setText('[data-seat-total]', total);
@@ -36,6 +63,7 @@
     document.querySelectorAll('[data-seat-full]').forEach(function (el) {
       el.style.display = remaining === 0 ? '' : 'none';
     });
+    applyClosedState();
   }
 
   if (document.readyState === 'loading') {

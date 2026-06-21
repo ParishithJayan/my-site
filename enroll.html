@@ -4,6 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/cohort-config.js"></script>
+  <script>
+    // Bounce straight to the waitlist page if registration is closed —
+    // checked before anything below renders, so there's no flash of the enroll form.
+    if (window.CFCE_COHORT && window.CFCE_COHORT.enrollOpen === false) {
+      location.replace((window.CFCE_COHORT.closedNotice && window.CFCE_COHORT.closedNotice.redirectTo) || 'registration-closed.html');
+    }
+  </script>
   <title>Reserve Your Seat — OpenSTAAD Bootcamp · CfCE</title>
   <meta name="description" content="Enroll in the OpenSTAAD Bootcamp for Everyone. 10 sessions, 3 real tools, plus drawing automation and AI + STAAD MCP. From ₹12,000.">
 
