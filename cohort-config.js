@@ -23,7 +23,7 @@
 (function (root) {
   var CFG = {
     totalSeats: 20,            // total seats in this cohort
-    seatsFilled: 12,            // seats already paid for — bump +1 per payment
+    seatsFilled: 18,            // seats already paid for — bump +1 per payment
     earlyPrice: 12000,         // ₹ for registrations on or before earlyUntil
     regularPrice: 15000,       // ₹ from the day after earlyUntil
     earlyUntil: '2026-06-15',  // last day (IST) to get earlyPrice; YYYY-MM-DD
