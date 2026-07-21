@@ -1,6 +1,6 @@
 # Coding for Civil Engineers (CfCE)
 
-> CfCE teaches practising structural engineers how to automate STAAD.Pro using the OpenSTAAD API, C#, and AI-assisted automation (STAAD MCP servers). The flagship programme is the **OpenSTAAD Bootcamp for Everyone** — a live, cohort-based bootcamp priced from ₹12,000 (on or before 15 June 2026; ₹15,000 thereafter), built for engineers with zero programming background. Founded and taught by Parishith Jayan, a practising structural engineer with production-grade OpenSTAAD automation experience.
+> CfCE teaches practising structural engineers how to automate STAAD.Pro using the OpenSTAAD API, C#, and AI-assisted automation (STAAD MCP servers). The flagship programme is the **OpenSTAAD Bootcamp for Everyone** — a live, cohort-based bootcamp priced at ₹15,000, built for engineers with zero programming background. Founded and taught by Parishith Jayan, a practising structural engineer with production-grade OpenSTAAD automation experience.
 
 ## About
 
@@ -13,10 +13,10 @@
 
 ## Flagship Course: OpenSTAAD Bootcamp for Everyone
 
-- **Price:** ₹12,000 (INR) for registrations on or before 15 June 2026, then ₹15,000 — inclusive of applicable taxes
-- **Format:** Live cohort, 10 sessions. Monday to Friday over two weeks (22 June – 3 July 2026), 9:00–11:00 PM IST, 2 hours a day (evening slot so working professionals can attend)
+- **Price:** ₹15,000 (INR) — inclusive of applicable taxes
+- **Format:** Live cohort, 10 sessions. Monday to Friday over two weeks (10 August – 21 August 2026), 9:00–11:00 PM IST, 2 hours a day (evening slot so working professionals can attend)
 - **Time commitment:** 2 hours per live session (9:00–11:00 PM IST), plus hands-on practice between sessions
-- **Next cohort starts:** June 22, 2026
+- **Next cohort starts:** August 10, 2026
 - **Seats:** Limited to 20 per cohort
 - **Target student:** Practising structural engineers with zero programming background who know STAAD.Pro and want to automate repetitive work
 - **Prerequisites:** Working STAAD.Pro licence and installation; no prior coding knowledge required

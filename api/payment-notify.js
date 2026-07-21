@@ -6,7 +6,7 @@ module.exports = async function paymentNotifyHandler(req, res) {
   }
 
   const { name, email, phone, company, payment_id, order_id, status, amount } = req.body;
-  const amountStr = amount ? (amount / 100).toLocaleString('en-IN') : '12,000';
+  const amountStr = amount ? (amount / 100).toLocaleString('en-IN') : '15,000';
 
   const botToken = process.env.TELEGRAM_BOT_TOKEN;
   const chatId   = process.env.TELEGRAM_USER_ID;

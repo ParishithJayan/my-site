@@ -6,8 +6,10 @@
      • the seat counter in the top bar and enroll page
      • the actual Razorpay charge (api/create-order.js reads this)
 
-   Pricing model: register on or before `earlyUntil` (IST) and you
-   pay `earlyPrice`. From the next day onward it is `regularPrice`.
+   Pricing model: this cohort has a single price — `earlyPrice` and
+   `regularPrice` are set to the same value, so `earlyUntil` has no
+   effect. To bring back early-bird pricing later, set `earlyPrice`
+   lower and `earlyUntil` to the last day it applies.
 
    seatsFilled: bump this by 1 each time someone pays.
    (You get a payment alert on every registration, so just +1.)
@@ -23,10 +25,10 @@
 (function (root) {
   var CFG = {
     totalSeats: 20,            // total seats in this cohort
-    seatsFilled: 18,            // seats already paid for — bump +1 per payment
-    earlyPrice: 12000,         // ₹ for registrations on or before earlyUntil
-    regularPrice: 15000,       // ₹ from the day after earlyUntil
-    earlyUntil: '2026-06-15',  // last day (IST) to get earlyPrice; YYYY-MM-DD
+    seatsFilled: 2,            // seats already paid for — bump +1 per payment
+    earlyPrice: 15000,         // single price this cohort — same as regularPrice
+    regularPrice: 15000,       // ₹ everyone pays; one price, no early bird
+    earlyUntil: '2026-08-09',  // unused while both prices match; YYYY-MM-DD
 
     enrollOpen: true,          // false = registration closed, see note above
 
