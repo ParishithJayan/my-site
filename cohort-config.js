@@ -30,6 +30,10 @@
     regularPrice: 15000,       // ₹ everyone pays; one price, no early bird
     earlyUntil: '2026-08-09',  // unused while both prices match; YYYY-MM-DD
 
+    // Marketing stats shown on the homepage hero — edit, commit, push to update.
+    engineersTrained: 90,      // shown as "90+" — engineers trained so far
+    studentRating: 4.8,        // shown as "4.8 ★" — average student rating
+
     enrollOpen: true,          // false = registration closed, see note above
 
     // Shown in the top bar (and used as the redirect target) only when enrollOpen is false.

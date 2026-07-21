@@ -8,6 +8,8 @@
      [data-price-current]   → price the next registrant pays (₹)
      [data-price-early]     → early-seat price (₹)
      [data-price-regular]   → regular-seat price (₹)
+     [data-engineers-trained] → engineers trained so far (shown as "N+")
+     [data-student-rating]  → average student rating (shown as "N ★")
    Does not touch payment, order, or any existing logic. */
 (function () {
   var cfg = window.CFCE_COHORT || {};
@@ -59,6 +61,8 @@
     setText('[data-price-current]', currentStr);
     setText('[data-price-early]', earlyStr);
     setText('[data-price-regular]', regularStr);
+    if (cfg.engineersTrained) setText('[data-engineers-trained]', cfg.engineersTrained + '+');
+    if (cfg.studentRating) setText('[data-student-rating]', cfg.studentRating + ' ★');
     document.querySelectorAll('[data-seat-bar]').forEach(function (el) { el.style.width = pct + '%'; });
     document.querySelectorAll('[data-seat-full]').forEach(function (el) {
       el.style.display = remaining === 0 ? '' : 'none';
