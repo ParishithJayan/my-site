@@ -10,6 +10,7 @@
      [data-price-regular]   → regular-seat price (₹)
      [data-engineers-trained] → engineers trained so far (shown as "N+")
      [data-student-rating]  → average student rating (shown as "N ★")
+     [data-years-experience] → years of production automation (shown as "N+")
    Does not touch payment, order, or any existing logic. */
 (function () {
   var cfg = window.CFCE_COHORT || {};
@@ -63,6 +64,7 @@
     setText('[data-price-regular]', regularStr);
     if (cfg.engineersTrained) setText('[data-engineers-trained]', cfg.engineersTrained + '+');
     if (cfg.studentRating) setText('[data-student-rating]', cfg.studentRating + ' ★');
+    if (cfg.yearsExperience) setText('[data-years-experience]', cfg.yearsExperience + '+');
     document.querySelectorAll('[data-seat-bar]').forEach(function (el) { el.style.width = pct + '%'; });
     document.querySelectorAll('[data-seat-full]').forEach(function (el) {
       el.style.display = remaining === 0 ? '' : 'none';

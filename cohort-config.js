@@ -33,6 +33,7 @@
     // Marketing stats shown on the homepage hero — edit, commit, push to update.
     engineersTrained: 90,      // shown as "90+" — engineers trained so far
     studentRating: 4.8,        // shown as "4.8 ★" — average student rating
+    yearsExperience: 9,        // shown as "9+" — years of production OpenSTAAD automation
 
     enrollOpen: true,          // false = registration closed, see note above
 
