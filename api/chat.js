@@ -28,11 +28,11 @@ Name: OpenSTAAD Bootcamp for Everyone. Price: Rs. 15,000 (20 seats total). Targe
 BOOTCAMP CURRICULUM — 10 Sessions:
 Sessions 1 & 2: Setup + Visual Studio; Variables, Loops & Conditions.
 Sessions 3 & 4: OOP Concepts; File Handling + Mini Project (2D Frame Generator).
-Sessions 5 & 6: Introduction to OpenSTAAD; API Workflow + Mini Project (MTO Tool).
-Sessions 7 & 8: Supports & Loads; Extracting Results + Mini Project (Load Export Tool).
-Sessions 9 & 10: Drawing Automation (create a real structural drawing from C# code); AI + STAAD MCP Server (set up an MCP server and let AI write OpenSTAAD functions for you).
+Sessions 5 & 6: Introduction to OpenSTAAD + API Workflow + Mini Project (MTO Tool); Supports & Loads.
+Sessions 7 & 8: Extracting Results + Mini Project (Load Export Tool); Drawing Automation (create a real structural drawing from C# code).
+Sessions 9 & 10: AI + STAAD MCP Server (set up an MCP server and let AI write OpenSTAAD functions for you); ETABS Automation (connect to ETABS through its API and start automating ETABS workflows — same idea as OpenSTAAD, different software).
 
-SCHEDULE: Live Monday to Friday over two weeks, 10 August to 21 August 2026, 9:00 to 11:00 PM IST, 2 hours a day. The evening slot lets working engineers attend after the workday. Three real tools are built in Sessions 4, 6 and 8 (2D PEB Frame Generator, MTO Generation Tool, Load Export Tool).
+SCHEDULE: Live Monday to Friday over two weeks, 10 August to 21 August 2026, 9:00 to 11:00 PM IST, 2 hours a day. The evening slot lets working engineers attend after the workday. Three real tools are built in Sessions 4, 5 and 7 (2D PEB Frame Generator, MTO Generation Tool, Load Export Tool).
 
 GUARANTEE: Build-it-or-it's-free — if a student attends, does the exercises, and still cannot build a working OpenSTAAD automation by the end of the cohort, they get a full refund. SEATS: limited to 20 per cohort. BONUSES (free): private WhatsApp community of like-minded engineers for life, lifetime access to recordings, and full source code for every tool built.
 

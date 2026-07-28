@@ -394,7 +394,7 @@ You have received intake data from a website visitor who requested a proposal. Y
 Parishith is a practising structural engineer and founder of CfCE. He teaches STAAD.Pro automation using the OpenSTAAD API — built from years of real, production-grade experience on live projects with real clients and real deadlines. He is not just an educator; he uses these tools himself. That is the gap CfCE closes.
 
 ## SERVICES
-- OpenSTAAD Bootcamp for Everyone: Rs. 15,000. 10 live sessions, Monday to Friday 9-11 PM IST starting 10 August 2026. C# basics + OpenSTAAD API + AI-assisted automation. For practising structural engineers with zero coding background. Builds three real automation tools from scratch, then teaches drawing automation in C# and a STAAD MCP server for AI-written OpenSTAAD functions.
+- OpenSTAAD Bootcamp for Everyone: Rs. 15,000. 10 live sessions, Monday to Friday 9-11 PM IST starting 10 August 2026. C# basics + OpenSTAAD API + AI-assisted automation. For practising structural engineers with zero coding background. Builds three real automation tools from scratch, then teaches drawing automation in C#, a STAAD MCP server for AI-written OpenSTAAD functions, and ETABS automation through the ETABS API.
 - Corporate Training: Custom engagement for firms running STAAD across teams. Standardises automation workflows across the organisation. Pricing by conversation.
 
 ## WRITING VOICE

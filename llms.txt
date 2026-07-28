@@ -20,8 +20,8 @@
 - **Seats:** Limited to 20 per cohort
 - **Target student:** Practising structural engineers with zero programming background who know STAAD.Pro and want to automate repetitive work
 - **Prerequisites:** Working STAAD.Pro licence and installation; no prior coding knowledge required
-- **What students build:** Three working automation tools — a 2D PEB Frame Generator, an MTO Generation Tool, and a Load Export Tool — plus, in the final two sessions, drawing automation in C# and setting up a STAAD MCP server so AI can write OpenSTAAD functions
-- **Curriculum scope:** C# fundamentals taught in structural-engineering context, then the OpenSTAAD API for real automations (load combinations, member queries, result extraction, report generation), and finally drawing automation in C# and AI-assisted automation through a STAAD MCP server
+- **What students build:** Three working automation tools — a 2D PEB Frame Generator, an MTO Generation Tool, and a Load Export Tool — plus, in the final sessions, drawing automation in C#, setting up a STAAD MCP server so AI can write OpenSTAAD functions, and ETABS automation through the ETABS API
+- **Curriculum scope:** C# fundamentals taught in structural-engineering context, then the OpenSTAAD API for real automations (load combinations, member queries, result extraction, report generation), and finally drawing automation in C#, AI-assisted automation through a STAAD MCP server, and a dedicated ETABS automation session (connecting to the ETABS API)
 - **Payment:** Direct on-site via Razorpay
 - **Refund policy:** 7-day refund window from enrolment date, provided the first live session has not yet taken place
 - **Guarantee:** Build-it-or-it's-free — full refund for any participating student who does the work (attends sessions, completes exercises) and still cannot build a working OpenSTAAD automation by the end of the cohort
