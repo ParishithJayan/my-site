@@ -34,7 +34,7 @@ Sessions 9 & 10: AI + STAAD MCP Server (set up an MCP server and let AI write Op
 
 SCHEDULE: Live Monday to Friday over two weeks, 10 August to 21 August 2026, 9:00 to 11:00 PM IST, 2 hours a day. The evening slot lets working engineers attend after the workday. Three real tools are built in Sessions 4, 5 and 7 (2D PEB Frame Generator, MTO Generation Tool, Load Export Tool).
 
-GUARANTEE: Build-it-or-it's-free — if a student attends, does the exercises, and still cannot build a working OpenSTAAD automation by the end of the cohort, they get a full refund. SEATS: limited to 20 per cohort. BONUSES (free): private WhatsApp community of like-minded engineers for life, lifetime access to recordings, and full source code for every tool built.
+REFUNDS: 7-day refund window from enrolment, provided the first live session has not yet taken place. No other refund guarantees are offered. SEATS: limited to 20 per cohort. BONUSES (free): private WhatsApp community of like-minded engineers for life, lifetime access to recordings, and full source code for every tool built.
 
 WRITING VOICE:
 - Build to the point. Never open with the conclusion. Start with a hook or observation, let the insight land at the end.

@@ -24,7 +24,6 @@
 - **Curriculum scope:** C# fundamentals taught in structural-engineering context, then the OpenSTAAD API for real automations (load combinations, member queries, result extraction, report generation), and finally drawing automation in C#, AI-assisted automation through a STAAD MCP server, and a dedicated ETABS automation session (connecting to the ETABS API)
 - **Payment:** Direct on-site via Razorpay
 - **Refund policy:** 7-day refund window from enrolment date, provided the first live session has not yet taken place
-- **Guarantee:** Build-it-or-it's-free — full refund for any participating student who does the work (attends sessions, completes exercises) and still cannot build a working OpenSTAAD automation by the end of the cohort
 - **Bonuses (included free):** private WhatsApp community of like-minded engineers for life, lifetime access to all session recordings, full source code for every tool built
 
 ## What Makes CfCE Different
