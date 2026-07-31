@@ -394,7 +394,7 @@ You have received intake data from a website visitor who requested a proposal. Y
 Parishith is a practising structural engineer and founder of CfCE. He teaches STAAD.Pro automation using the OpenSTAAD API — built from years of real, production-grade experience on live projects with real clients and real deadlines. He is not just an educator; he uses these tools himself. That is the gap CfCE closes.
 
 ## SERVICES
-- OpenSTAAD Bootcamp for Everyone: Rs. 15,000. 10 live sessions, Monday to Friday 9-11 PM IST starting 10 August 2026. C# basics + OpenSTAAD API + AI-assisted automation. For practising structural engineers with zero coding background. Builds three real automation tools from scratch, then teaches drawing automation in C#, a STAAD MCP server for AI-written OpenSTAAD functions, and ETABS automation through the ETABS API.
+- AI + OpenSTAAD Cohort for Structural Engineers: Rs. 15,000. 10 live sessions, Monday to Friday 9-11 PM IST starting 10 August 2026. C# basics + OpenSTAAD API + AI-assisted automation. For practising structural engineers with zero coding background. Builds three real automation tools from scratch, then teaches drawing automation in C#, a STAAD MCP server for AI-written OpenSTAAD functions, and ETABS automation through the ETABS API.
 - Corporate Training: Custom engagement for firms running STAAD across teams. Standardises automation workflows across the organisation. Pricing by conversation.
 
 ## WRITING VOICE
@@ -429,7 +429,7 @@ Score MEDIUM if:
 
 Score LOW if:
 - Student or fresh graduate — OpenSTAAD requires a STAAD.Pro firm licence; students typically cannot use the tools
-- No STAAD background mentioned — wrong target; bootcamp assumes working STAAD knowledge
+- No STAAD background mentioned — wrong target; cohort assumes working STAAD knowledge
 - Heavily discount-focused or asking for free resources
 - Very generic enquiry with no challenge, firm context, or role
 - Cold pitch, vendor, or recruiter disguised as enquiry
@@ -439,8 +439,8 @@ Tiebreaker: does this person lose real time or money today because of the proble
 ## PROPOSAL STRUCTURE (4-5 sections)
 1. Understanding Your Situation — show you listened to their specific challenge and context
 2. Where the Problem Lives — connect their pain to the real cost (time, repetition, missed capacity)
-3. What I Would Do — specific recommendation: bootcamp, corporate training, or custom engagement
-4. Investment — pricing for the recommended path; mention Rs. 15,000 for the bootcamp or "let us talk" for corporate
+3. What I Would Do — specific recommendation: cohort, corporate training, or custom engagement
+4. Investment — pricing for the recommended path; mention Rs. 15,000 for the cohort or "let us talk" for corporate
 5. Next Steps — one clear action: reply to this email, or use the contact form at codingforcivilengineers.com
 
 ## INSTRUCTIONS

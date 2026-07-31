@@ -139,7 +139,7 @@ function buildEmail(details) {
     `2. Install STAAD.Pro and Visual Studio Community before Day 1. The setup guide goes out in the group.`,
     `3. Turn up on ${COHORT.startDate}. Bring a model you are tired of touching by hand.`,
     ``,
-    `No programming background? That is exactly who this bootcamp is built for. Trust me — most engineers in the last cohort started at the same place, and they walked out with working tools.`,
+    `No programming background? That is exactly who this cohort is built for. Trust me — most engineers who came before you started at exactly the same place, and they walked out with working tools.`,
     ``,
     `Any question before we start, just reply to this email. It comes straight to me.`,
     ``,
@@ -254,7 +254,7 @@ ${whatsappBlock}
             <td style="padding:26px 32px 0;">
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#E1F5EE;border-radius:8px;">
                 <tr><td style="padding:16px 20px;">
-                  <p style="margin:0;font-size:15px;line-height:1.6;color:#1E2D40;">No programming background? That is exactly who this bootcamp is built for. Trust me — most engineers in the last cohort started at the same place, and they walked out with working tools.</p>
+                  <p style="margin:0;font-size:15px;line-height:1.6;color:#1E2D40;">No programming background? That is exactly who this cohort is built for. Trust me — most engineers who came before you started at exactly the same place, and they walked out with working tools.</p>
                 </td></tr>
               </table>
             </td>
@@ -360,7 +360,7 @@ module.exports = async function razorpayWebhookHandler(req, res) {
   const notes   = payment.notes || {};
 
   // payment.captured fires for every payment on the account. A payment tagged
-  // for some other product is skipped; an untagged one is treated as a bootcamp
+  // for some other product is skipped; an untagged one is treated as a cohort
   // sale, so nothing silently stops sending if the tag ever goes missing.
   if (notes.product && notes.product !== 'openstaad-bootcamp') {
     return res.json({ ok: true, emailed: false, reason: 'different product: ' + notes.product });

@@ -26,7 +26,7 @@ module.exports = async function paymentNotifyHandler(req, res) {
         `ℹ️ The user opened Razorpay but did not complete payment.`,
       ]
     : [
-        `🎉 *New Bootcamp Enrollment — CfCE*`,
+        `🎉 *New Cohort Enrollment — CfCE*`,
         ``,
         `👤 *Name:* ${name}`,
         `📧 *Email:* ${email}`,
@@ -44,8 +44,8 @@ module.exports = async function paymentNotifyHandler(req, res) {
   // (asterisks for bold, backticks for monospace).
   const emailBody = text.replace(/[*`]/g, '');
   const emailSubject = cancelled
-    ? 'Payment Cancelled — CfCE Bootcamp'
-    : 'New Bootcamp Enrollment — CfCE';
+    ? 'Payment Cancelled — CfCE Cohort'
+    : 'New Cohort Enrollment — CfCE';
 
   // ── Telegram (best-effort) ──────────────────────────────────────────────
   // Telegram is banned in India until 22 June 2026, so it may fail silently.
