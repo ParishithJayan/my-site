@@ -42,7 +42,7 @@
     // time — update those too when this cohort changes.
     // The WhatsApp group link is deliberately NOT here: this file is served to
     // every visitor. It lives in the WHATSAPP_GROUP_URL env var, server-side only.
-    courseName:   'OpenSTAAD Bootcamp for Everyone',
+    courseName:   'AI + OpenSTAAD Cohort for Structural Engineers',
     startDate:    'August 10, 2026',
     sessionTime:  '9–11 PM IST',
     sessionCount: 10,
