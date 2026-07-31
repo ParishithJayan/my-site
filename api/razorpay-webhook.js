@@ -13,9 +13,12 @@
    the two paths can never double up on each other.
 
    Dashboard → Settings → Webhooks:
-     URL     https://codingforcivilengineers.com/api/razorpay-webhook
+     URL     https://www.codingforcivilengineers.com/api/razorpay-webhook
      Secret  → same value as RAZORPAY_WEBHOOK_SECRET
      Event   payment.captured   ← subscribe to this one only
+
+   Use the www host. The apex 307-redirects to www and Razorpay does not
+   reliably follow redirects, so the apex URL fails silently.
 
    Env vars: RAZORPAY_WEBHOOK_SECRET, RESEND_API_KEY,
              WHATSAPP_GROUP_URL, FROM_EMAIL (optional)
