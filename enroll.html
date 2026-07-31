@@ -695,7 +695,9 @@
           description: 'OpenSTAAD Bootcamp for Everyone',
           order_id:    orderData.order_id,
           prefill:     { name: name, email: email, contact: phone },
-          notes:       { company: company },
+          // Carried onto the payment entity so api/razorpay-webhook.js has the
+          // buyer's details for the welcome email without a second API call.
+          notes:       { name: name, email: email, phone: phone, company: company, product: 'openstaad-bootcamp' },
           theme:       { color: '#1D9E75' },
           handler: async function (response) {
             try {

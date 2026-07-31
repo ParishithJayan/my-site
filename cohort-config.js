@@ -37,6 +37,17 @@
 
     enrollOpen: true,          // false = registration closed, see note above
 
+    // Cohort details used by the automatic welcome email (api/razorpay-webhook.js).
+    // NOTE: the announcement bar in each .html still hardcodes the same date and
+    // time — update those too when this cohort changes.
+    // The WhatsApp group link is deliberately NOT here: this file is served to
+    // every visitor. It lives in the WHATSAPP_GROUP_URL env var, server-side only.
+    courseName:   'OpenSTAAD Bootcamp for Everyone',
+    startDate:    'August 10, 2026',
+    sessionTime:  '9–11 PM IST',
+    sessionCount: 10,
+    supportEmail: 'jparishith@gmail.com',
+
     // Shown in the top bar (and used as the redirect target) only when enrollOpen is false.
     closedNotice: {
       bannerText: 'Next cohort is underway — registrations are closed for now.',
