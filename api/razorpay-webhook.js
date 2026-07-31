@@ -107,7 +107,13 @@ function formatDate(unixSeconds) {
 
 /* ── Email content ─────────────────────────────────────────── */
 function buildEmail(details) {
-  const { name, amount, paymentId, paidOn, whatsappUrl } = details;
+  const { name, amount, paymentId, paidOn, whatsappUrl, backfill } = details;
+
+  // backfill: true is for students who paid before this automation existed.
+  // "Payment received" reads oddly a week after the fact, so the opening
+  // points forward instead. Everything else is identical.
+  const opener  = backfill ? 'Now let us get you ready.' : 'Payment received.';
+  const leadIn  = backfill ? '' : 'Payment received. ';
 
   const hi       = name ? `, ${name}` : '';
   const amountIn = '₹' + Number(amount || 0).toLocaleString('en-IN');
@@ -118,7 +124,7 @@ function buildEmail(details) {
   const hasLink = Boolean(whatsappUrl);
 
   const text = [
-    `Your seat is confirmed${hi}. Payment received.`,
+    `Your seat is confirmed${hi}. ${opener}`,
     ``,
     `You are in the ${COHORT.courseName} — ${COHORT.sessionCount} live sessions starting ${COHORT.startDate}, ${COHORT.sessionTime}.`,
     `You will write C# from scratch and finish having built automations that run on your own models.`,
@@ -200,7 +206,7 @@ function buildEmail(details) {
             <td style="padding:34px 32px 0;">
               <span style="display:inline-block;background:#E1F5EE;color:#12704F;font-size:12px;font-weight:700;letter-spacing:0.7px;text-transform:uppercase;padding:7px 13px;border-radius:20px;">Seat confirmed</span>
               <h1 style="margin:18px 0 0;font-size:27px;line-height:1.3;color:#1E2D40;">You are in${esc(hi)}.</h1>
-              <p style="margin:14px 0 0;font-size:16px;line-height:1.6;color:#41505f;">Payment received. You have a seat in the <strong style="color:#1E2D40;">${esc(COHORT.courseName)}</strong> — ${esc(COHORT.sessionCount)} live sessions starting <strong style="color:#1E2D40;">${esc(COHORT.startDate)}</strong>, ${esc(COHORT.sessionTime)}.</p>
+              <p style="margin:14px 0 0;font-size:16px;line-height:1.6;color:#41505f;">${leadIn}You have a seat in the <strong style="color:#1E2D40;">${esc(COHORT.courseName)}</strong> — ${esc(COHORT.sessionCount)} live sessions starting <strong style="color:#1E2D40;">${esc(COHORT.startDate)}</strong>, ${esc(COHORT.sessionTime)}.</p>
               <p style="margin:14px 0 26px;font-size:16px;line-height:1.6;color:#41505f;">You will write C# from scratch and finish having built automations that run on your own models.</p>
             </td>
           </tr>
@@ -395,3 +401,8 @@ module.exports = async function razorpayWebhookHandler(req, res) {
   console.log('razorpay-webhook: welcome email sent to', to, 'for', paymentId);
   return res.json({ ok: true, emailed: true });
 };
+
+// Exposed so a one-off backfill can reuse this exact template rather than
+// keeping a second copy that drifts out of step.
+module.exports.buildEmail      = buildEmail;
+module.exports.sendWelcomeEmail = sendWelcomeEmail;
