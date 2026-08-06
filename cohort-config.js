@@ -25,7 +25,7 @@
 (function (root) {
   var CFG = {
     totalSeats: 20,            // total seats in this cohort
-    seatsFilled: 14,            // seats already paid for — bump +1 per payment
+    seatsFilled: 16,            // seats already paid for — bump +1 per payment
     earlyPrice: 15000,         // single price this cohort — same as regularPrice
     regularPrice: 15000,       // ₹ everyone pays; one price, no early bird
     earlyUntil: '2026-08-09',  // unused while both prices match; YYYY-MM-DD
